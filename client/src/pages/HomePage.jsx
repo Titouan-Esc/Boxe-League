@@ -1,8 +1,10 @@
 import TrierPar from "../components/TrierPar"
+import NavBar from "../components/NavBar"
 
 const HomePage = () => {
     return (
         <main>
+            <NavBar/>
             <div className="top">
                 <h1>Boxe League</h1>
                 <p>
@@ -14,6 +16,9 @@ const HomePage = () => {
                 <h2>Champions</h2>
             </div>
             <TrierPar/>
+            <div className="champions">
+
+            </div>
         </main>
     )
 }

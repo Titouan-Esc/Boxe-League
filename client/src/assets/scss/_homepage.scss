@@ -1,0 +1,30 @@
+main {
+  .top {
+    height: 130vh;
+    @include flex-box(column, flex-start, center);
+    background-image: url("../image/UFC mixed martial arts mma fight extreme battle battles stadium crowd .png");
+    padding-top: 15em;
+
+    h1 {
+      font-family: "utopia";
+      font-size: 40px;
+      margin-bottom: 50px;
+    }
+    p {
+      width: 50%;
+      font-size: 20px;
+      text-align: center;
+    }
+  }
+
+  .bandeau {
+    height: 10vh;
+    @include flex-box(row, center, center);
+    background-color: $color_one;
+
+    h2 {
+      font-family: "utopia";
+      color: white;
+    }
+  }
+}
