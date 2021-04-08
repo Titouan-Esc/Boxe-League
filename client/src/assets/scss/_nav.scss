@@ -1,0 +1,7 @@
+header {
+  nav {
+    height: 10vh;
+    @include flex-box(row, space-between, center);
+    padding: 0 15px;
+  }
+}

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import './assets/scss/style.scss';
-import HomePage from './pages/HomePage';
+import HomePage from './pages/HomePage.jsx';
 
 function App() {
   return (
