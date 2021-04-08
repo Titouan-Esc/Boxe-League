@@ -1,9 +1,9 @@
 const TrierPar = () => {
     return (
-        <div>
-            <p>Trié par :</p>
+        <div className='trie_par'>
+            <h3>Trié par :</h3>
             <div className="conteneur_du_trie">
-                <div className="categories">
+                <div className="trie">
                     <p>Catégories</p>
                     <form>
                         <select name="categories" id="categories">
@@ -19,7 +19,7 @@ const TrierPar = () => {
                         </select>
                     </form>
                 </div>
-                <div className="titres">
+                <div className="trie">
                     <p>Titres</p>
                     <form>
                         <select name="titres" id="titres">
@@ -31,7 +31,7 @@ const TrierPar = () => {
                         </select>
                     </form>
                 </div>
-                <div className="popularite">
+                <div className="trie">
                     <p>Popularitée</p>
                     <form>
                         <select name="popularite" id="popularite">

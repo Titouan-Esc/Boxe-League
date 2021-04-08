@@ -17,7 +17,7 @@ const HomePage = () => {
             </div>
             <TrierPar/>
             <div className="champions">
-
+                
             </div>
         </main>
     )

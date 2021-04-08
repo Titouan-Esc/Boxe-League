@@ -1,0 +1,29 @@
+.trie_par {
+  @include flex-box(column, space-between, center);
+
+  h3 {
+    font-family: "utopia";
+    padding-top: 20px;
+  }
+
+  .conteneur_du_trie {
+    width: 100%;
+    @include flex-box(row, space-between, center);
+    padding: 40px;
+
+    .trie {
+      p {
+        font-family: "roboto-regular";
+        text-align: center;
+        padding-bottom: 15px;
+      }
+
+      form {
+        select {
+          width: 15vw;
+          height: 4vh;
+        }
+      }
+    }
+  }
+}
