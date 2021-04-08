@@ -1,0 +1,11 @@
+footer {
+  height: 10vh;
+  @include flex-box(row, center, center);
+  background-color: $color_one;
+
+  h2 {
+    font-family: "utopia";
+    text-align: center;
+    color: white;
+  }
+}
