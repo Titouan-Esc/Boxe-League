@@ -1,7 +1,7 @@
 const CreerUnCompte = () => {
     return (
         <div>
-            
+            Salut toi
         </div>
     )
 }
