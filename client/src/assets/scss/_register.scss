@@ -1,0 +1,18 @@
+.register {
+  height: 100vh;
+  position: relative;
+  @include flex-box(column, center, center);
+  background-image: url("../image/UFC\ mixed\ martial\ arts\ mma\ fight\ extreme\ battle\ battles\ stadium\ crowd\ .png");
+  background-position: center;
+
+  img {
+    width: 6vw;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+
+  .form_register {
+    @include flex-box(row, space-between, center);
+  }
+}

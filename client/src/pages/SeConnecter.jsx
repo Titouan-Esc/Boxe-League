@@ -3,21 +3,28 @@ import { Link } from 'react-router-dom'
 
 const SeConnecter = () => {
     return (
-        <main>
-            <img src="./logo/arrow.png" alt="Retour en arrière"/>
+        <main className='connect'>
+            <Link to='/'><img src="./logo/arrow.png" alt="Retour en arrière"className="return"/></Link>
             <div className="conteneur">
                 <img src="./logo/logo.png" alt="Logo du site"/>
 
-                <form>
-                    <label htmlFor="identifiant">Identifiant :</label>
-                    <input type="text" name="identifiant" id="identifiant"/>
+                <form className='form_connect'>
+                    <div className="form">
+                        <div className="input">
+                            <label htmlFor="identifiant">Identifiant :</label>
+                            <input type="text" name="identifiant" id="identifiant"/>
+                        </div>
 
-                    <label htmlFor="motdepasse">Mot de passe :</label>
-                    <input type="text" name="motdepasse" id="motdepasse"/>
+                        <div className="input">
+                            <label htmlFor="motdepasse">Mot de passe :</label>
+                            <input type="text" name="motdepasse" id="motdepasse"/>
+                        </div>
+                    </div>
+                    <div className="liens">
+                        <Link to="/register">Se créer un compte</Link>
 
-                    <Link to="/register">Se créer un compte</Link>
-
-                    <button type="submit">Se connecter</button>
+                        <button type="submit">Se connecter</button>
+                    </div>
                 </form>
             </div>
         </main>
