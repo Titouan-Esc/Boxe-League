@@ -12,7 +12,53 @@
     left: 15px;
   }
 
-  .form_register {
-    @include flex-box(row, space-between, center);
+  .conteneur_register {
+    width: 100%;
+    @include flex-box(row, space-around, center);
+
+    .form_register {
+      width: 50vw;
+      height: 50vh;
+      @include flex-box(column, space-between, flex-start);
+      background-color: white;
+      border-radius: 22px;
+      padding: 30px;
+
+      .input_register {
+        @include flex-box(row, flex-start, center);
+
+        label {
+          font-family: "roboto-bold";
+          font-size: 25px;
+          margin-right: 30px;
+        }
+
+        input {
+          border: 0;
+          background-color: gainsboro;
+        }
+      }
+    }
+
+    .register_btn {
+      height: 100%;
+      @include flex-box(row, flex-end, flex-end);
+
+      button {
+        width: 10vw;
+        height: 5vh;
+        font-family: "roboto-bold";
+        font-size: 18px;
+        border-radius: 22px;
+        background-color: black;
+        color: white;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $color_one;
+          transition: all 0.5s ease-in-out;
+        }
+      }
+    }
   }
 }
