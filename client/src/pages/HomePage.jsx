@@ -1,7 +1,12 @@
-import TrierPar from "../components/TrierPar"
-import NavBar from "../components/NavBar"
+import TrierPar from "../components/TrierPar";
+import NavBar from "../components/NavBar";
+import { UserContext } from '../User.Context';
+import React, { useContext } from 'react';
+
 
 const HomePage = () => {
+
+    const {user} = useContext(UserContext);
     return (
         <main>
             <NavBar/>
@@ -11,6 +16,9 @@ const HomePage = () => {
                     La solution pour se renseigner sur vos combattants préférer tout en
                     prenant part à la création de boxeurs et de les faire combattre entre eux 
                 </p>
+                <div className="user">
+                    {user ? (<h3>Bienvenue à toi {user.username} {user.usersurname}</h3>) : (<h3>Pour plus de combats veuillez vous connecter</h3>)}
+                </div>
             </div>
             <div className="bandeau">
                 <h2>Champions</h2>
