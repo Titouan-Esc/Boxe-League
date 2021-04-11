@@ -19,7 +19,7 @@ const NavBar = () => {
                 ) : (
                     <>
                         <Link to='/champions'>Champions</Link>
-                        <Link to='/vos%20champions'>Vos Champions</Link>
+                        <Link to='/champions'>Vos Champions</Link>
                         <Link to='/combats'>Combats</Link>
                         <Link to='/'><img src="./logo/logo.png" alt="Logo du site"/></Link>
                     </>

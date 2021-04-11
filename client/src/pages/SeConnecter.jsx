@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import React, { useContext, useState } from 'react';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import { UserContext } from '../User.Context';
 
 
@@ -11,43 +11,45 @@ const SeConnecter = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [redirect, setRedirect] = useState(false);
+    // const [redirect, setRedirect] = useState(false);
 
-    const submit = async (e) => {
+    const submit = async (e)=>{
         e.preventDefault();
 
         await fetch('http://localhost:8000/api/user/login', {
-            method : 'POST',
-            headers : {'Content-Type' : 'application/json'},
-            credentials : 'include',
-            body : JSON.stringify({
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            credentials: 'include',
+            body: JSON.stringify({
                 email,
                 password
             })
         });
 
         const response = await fetch('http://localhost:8000/api/user', {
-            headers : {'Content-Type' : 'application/json'},
-            credentials : 'include'
+            headers: {'Content-Type': 'application/json'},
+            credentials: 'include',
         })
 
         const content = await response.json();
 
-        if(content._id) {
+        console.log(content);
+
+        if(content._id){
             setUser(content);
         }
 
-        setRedirect(true);
+        // setRedirect(true);
     }
+    
 
+    // if(user) {
+    //     return <Redirect to='/'/>;
+    // }
 
-    if(user) {
-        return <Redirect to='/'/>;
-    }
-
-    if(redirect) {
-        return <Redirect to='/'/>;
-    }
+    // if(redirect) {
+    //     return <Redirect to='/'/>;
+    // }
 
 
 
@@ -72,7 +74,7 @@ const SeConnecter = () => {
                     <div className="liens">
                         <Link to="/register">Se créer un compte</Link>
 
-                        <button type="submit">Se connecter</button>
+                        <button type='submit'>Se connecter</button>
                     </div>
                 </form>
             </div>
