@@ -1,5 +1,6 @@
 .trie_par {
   @include flex-box(column, space-between, center);
+  background-color: white;
 
   h3 {
     font-family: "utopia";
@@ -20,6 +21,11 @@
 
       form {
         select {
+          width: 15vw;
+          height: 4vh;
+        }
+
+        input {
           width: 15vw;
           height: 4vh;
         }

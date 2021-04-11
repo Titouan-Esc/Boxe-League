@@ -24,11 +24,11 @@ const HomePage = () => {
 
     if(!user) {
         link = (
-            <Link to='/connect'>Se connecter</Link>
+            <Link to='/connect'><button className='btn-login'>Se connecter</button></Link>
         )
     }else {
         link = (
-            <button onClick={logout}>Se déconnecter</button>
+            <button className='logout' onClick={logout}>Se déconnecter</button>
         )
     }
 
@@ -42,7 +42,7 @@ const HomePage = () => {
                     prenant part à la création de boxeurs et de les faire combattre entre eux 
                 </p>
                 <div className="user">
-                    {user ? (<h3>Bienvenue à toi {user.username} {user.usersurname}</h3>) : (<h3>Pour plus de combats veuillez vous connecter</h3>)}
+                    {user ? (<h3 className='bienvenue'>Bienvenue à toi {user.username}</h3>) : (<h3>Pour plus de combats veuillez vous connecter</h3>)}
                     {link}
                 </div>
             </div>

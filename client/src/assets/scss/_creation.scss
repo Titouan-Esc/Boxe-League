@@ -1,0 +1,85 @@
+.creation_personnage {
+  height: 100vh;
+  @include flex-box(column, flex-start, center);
+  background-color: $color_one;
+
+  .creation_top {
+    width: 100%;
+    position: relative;
+    @include flex-box(row, center, center);
+    padding: 20px;
+
+    .return {
+      width: 3vw;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+    }
+
+    h1 {
+      font-family: "utopia";
+      font-size: 2em;
+      color: white;
+    }
+  }
+
+  .conteneur_form {
+    width: 100%;
+    height: 100%;
+    @include flex-box(column, center, center);
+
+    .form_personnage {
+      width: 70%;
+      height: 80%;
+      @include flex-box(row, space-between, center);
+      background-color: white;
+      border-radius: 8px;
+      padding: 50px;
+
+      .form_gauche {
+        width: 50%;
+        height: 100%;
+        @include flex-box(column, space-around, flex-start);
+
+        .creation_ligne {
+          @include flex-box(row, flex-start, center);
+
+          label {
+            font-family: "roboto-bold";
+            font-size: 20px;
+            padding-right: 50px;
+          }
+
+          input {
+            width: 15vw;
+            height: 5vh;
+          }
+        }
+      }
+
+      .form_droite {
+        width: 50%;
+        height: 80%;
+        @include flex-box(column, space-between, center);
+
+        label {
+          font-family: "roboto-bold";
+        }
+
+        button {
+          width: 20vw;
+          height: 5vh;
+          font-family: "utopia";
+          font-size: 1em;
+          text-align: center;
+          border: 0;
+          border-radius: 22px;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

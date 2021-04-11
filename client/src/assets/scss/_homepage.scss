@@ -1,6 +1,6 @@
 main {
   .top {
-    height: 130vh;
+    height: 100vh;
     @include flex-box(column, flex-start, center);
     background-image: url("../image/UFC mixed martial arts mma fight extreme battle battles stadium crowd .png");
     padding-top: 15em;
@@ -12,8 +12,45 @@ main {
     }
     p {
       width: 50%;
+      font-family: "roboto-regular";
       font-size: 20px;
       text-align: center;
+    }
+
+    .user {
+      height: 10vh;
+      margin-top: 25px;
+      @include flex-box(column, space-between, center);
+
+      .bienvenue {
+        font-family: "roboto-bold";
+      }
+
+      .btn-login {
+        width: 12vw;
+        height: 5vh;
+        font-family: "utopia";
+        background-color: $color_vic;
+        border: 0;
+        border-radius: 22px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .logout {
+        width: 12vw;
+        height: 5vh;
+        font-family: "utopia";
+        background-color: $color_def;
+        border: 0;
+        border-radius: 22px;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
   }
 

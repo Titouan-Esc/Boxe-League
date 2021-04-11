@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import React, { useContext, useState } from 'react';
-// import { Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { UserContext } from '../User.Context';
 
 
@@ -11,7 +11,7 @@ const SeConnecter = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    // const [redirect, setRedirect] = useState(false);
+    const [redirect, setRedirect] = useState(false);
 
     const submit = async (e)=>{
         e.preventDefault();
@@ -33,23 +33,22 @@ const SeConnecter = () => {
 
         const content = await response.json();
 
-        console.log(content);
 
         if(content._id){
             setUser(content);
         }
 
-        // setRedirect(true);
+        setRedirect(true);
     }
     
 
-    // if(user) {
-    //     return <Redirect to='/'/>;
-    // }
+    if(user) {
+        return <Redirect to='/'/>;
+    }
 
-    // if(redirect) {
-    //     return <Redirect to='/'/>;
-    // }
+    if(redirect) {
+        return <Redirect to='/'/>;
+    }
 
 
 
@@ -59,8 +58,8 @@ const SeConnecter = () => {
             <div className="conteneur">
                 <img src="./logo/logo.png" alt="Logo du site"/>
 
-                <form className='form_connect'>
-                    <div className="form" onSubmit={submit}>
+                <form className='form_connect' onSubmit={submit}>
+                    <div className="form">
                         <div className="input">
                             <label htmlFor="email">Email :</label>
                             <input type="email" name="email" required value={email} onChange={e=>setEmail(e.target.value)}/>
