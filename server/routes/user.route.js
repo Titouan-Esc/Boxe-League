@@ -13,7 +13,6 @@ router.post('/register', async (req,res) => {
     // * Créer une instance de User avec les données suivantes plus le password Hashé
     const user = new User({
         username : req.body.username,
-        usersurname : req.body.usersurname,
         email : req.body.email,
         password : hashedPassword
     });
