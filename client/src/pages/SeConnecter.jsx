@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import React, { useState, useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { UserContext } from '../User.Context';
 
@@ -27,7 +27,7 @@ const SeConnecter = () => {
         });
 
         const response = await fetch('http://localhost:8000/api/user', {
-            header : {'Content-Type' : 'application/json'},
+            headers : {'Content-Type' : 'application/json'},
             credentials : 'include'
         })
 
@@ -40,12 +40,13 @@ const SeConnecter = () => {
         setRedirect(true);
     }
 
+
     if(user) {
         return <Redirect to='/'/>;
     }
 
     if(redirect) {
-        return <Redirect to='/register'/>;
+        return <Redirect to='/'/>;
     }
 
 

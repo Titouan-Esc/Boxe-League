@@ -7,10 +7,9 @@ import { Redirect } from 'react-router-dom';
 const CreerUnCompte = () => {
 
 
-    const [username, setUsername] = useState('');
-    const [usersurname, setUsersurname] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const [redirect, setRedirect] = useState(false);
 
     const submit = async (e) => {
@@ -21,7 +20,6 @@ const CreerUnCompte = () => {
             headers : {'Content-Type' : 'application/json'},
             body : JSON.stringify({
                 username,
-                usersurname,
                 email,
                 password
             })
@@ -31,7 +29,7 @@ const CreerUnCompte = () => {
     }
 
     if(redirect) {
-        return <Redirect to='/'/>;
+        return <Redirect to='/connect'/>;
     }
 
     return (
@@ -45,11 +43,6 @@ const CreerUnCompte = () => {
                     </div>
 
                     <div className="input_register">
-                        <label htmlFor="surname">Prénom :</label>
-                        <input type="text" name="surname" id="surname" required value={usersurname} onChange={e=>setUsersurname(e.target.value)}/>
-                    </div>
-
-                    <div className="input_register">
                         <label htmlFor="email">Email :</label>
                         <input type="email" name="email" required value={email} onChange={e=>setEmail(e.target.value)}/>
                     </div>
@@ -58,10 +51,11 @@ const CreerUnCompte = () => {
                         <label htmlFor="password">Mot de passe :</label>
                         <input type="password" name="password" required value={password} onChange={e=>setPassword(e.target.value)}/>
                     </div>
+
+                    <div className="register_btn">
+                        <button type="submit">Création</button>
+                    </div>
                 </form>
-                <div className="register_btn">
-                    <button type="submit">Création</button>
-                </div>
             </div>
         </main>
     )

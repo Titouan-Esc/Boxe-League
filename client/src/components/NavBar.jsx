@@ -6,6 +6,7 @@ import React, {useContext} from 'react';
 const NavBar = () => {
 
     const {user} = useContext(UserContext);
+    
     return (
         <header>
             <nav>
