@@ -1,6 +1,35 @@
 import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import Card from '../components/Card';
+
+const url = 'http://localhost:8000/api/cards';
 
 const VosChampions = () => {
+    const [cards, setCards] = useState([]);
+    const [opCount, setOpCount] = useState(0);
+
+    async function fetchCards() {
+        try {
+            const res = await axios.get(url);
+            console.log(res.data);
+            setCards(res.data);
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const addCount = () => {
+        setOpCount(opCount+1);
+    }
+
+    useEffect(() => {
+        fetchCards();
+    }, [opCount]);
+
+
+
+
     return (
         <main className="vos_champions">
             <div className="vos_champions_top">
@@ -56,6 +85,8 @@ const VosChampions = () => {
 
             <div className="personnages">
                 <Link to='/creation'><button>Création du personnage</button></Link>
+
+                <Card cards={cards} addCount={addCount}/>
             </div>
         </main>
     )
