@@ -16,4 +16,5 @@ const userSchema = new mongoose.Schema({
     cards : [{ type : mongoose.Schema.Types.ObjectId, ref : 'Cards'}]
 });
 
+
 module.exports = mongoose.model('User', userSchema);

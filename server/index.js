@@ -3,8 +3,10 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
+
 const userRoutes = require('./routes/user.route');
 const cardsRoutes = require('./routes/cards.route');
+
 
 require('dotenv/config');
 
@@ -28,5 +30,7 @@ app.use(express.json());
 
 app.use('/api/user', userRoutes);
 app.use('/api/cards', cardsRoutes);
+
+
 
 app.listen(8000);

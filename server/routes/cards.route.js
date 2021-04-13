@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Cards = require('../models/cards.model');
+const multer = require('multer');
 
 router.get('/', async (req,res) => {
     try {
@@ -36,9 +37,7 @@ router.post('/', async (req,res) => {
     });
 
     try {
-        const savedCard = await card.save({
-            // user : User._id
-        });
+        const savedCard = await card.save();
         res.json(savedCard);
     } catch (error) {
         console.warn(error)

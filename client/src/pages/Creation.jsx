@@ -15,6 +15,7 @@ const Creation = () => {
     const [card, setCard] = useState([]);
     const [redirect , setRedirect] = useState(false);
 
+
     function uploadData() {
         const cardUrl = 'http://localhost:8000/api/cards';
         axios.post(cardUrl, card).then(function (response) {
@@ -54,7 +55,7 @@ const Creation = () => {
                 <h1>Création du Personnage</h1>
             </div>
             <div className="conteneur_form">
-                <form className='form_personnage' onSubmit={handleSubmit}>
+                <form className='form_personnage' onSubmit={handleSubmit} encType='multipart/form-data'>
                     <div className="form_gauche">
                         <div className="creation_ligne">
                             <label htmlFor="">Nom :</label>
@@ -78,8 +79,9 @@ const Creation = () => {
                     </div>
 
                     <div className="form_droite">
-                        <label htmlFor="image">Image du champion :</label>
-                        <input type="file" name="image" accept="image/png, image/jpeg" value={image} onChange={(e) => setImage(e.target.value)}/>
+                        <label htmlFor="file">Image du champion :</label>
+                        <input type="file" name="file" onChange={changeHandler}/>
+
                         <button type="submit">Créer Personnage</button>
                     </div>
                 </form>
