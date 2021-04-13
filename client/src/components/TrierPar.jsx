@@ -20,25 +20,18 @@ const TrierPar = () => {
                     </form>
                 </div>
                 <div className="trie">
-                    <p>Titres</p>
+                    <p>Nom</p>
                     <form>
-                        <select name="titres" id="titres">
-                            <option value="">--Titres--</option>
-                            <option value="champion-sa-catg">Champion de sa catégorie</option>
-                            <option value="champion-deux-catg">Champion deux catégories</option>
-                            <option value="champion-plus-catg">Champion de plusieurs catégories</option>
-                            <option value="champion-monde">Champion du Monde</option>
-                        </select>
+                        <input type="search"/>
                     </form>
                 </div>
                 <div className="trie">
-                    <p>Popularitée</p>
+                    <p>Stats</p>
                     <form>
                         <select name="popularite" id="popularite">
-                            <option value="">--Popularitée--</option>
-                            <option value="apprecie">Apprécié</option>
-                            <option value="neutre">Neutre</option>
-                            <option value="haie">Haïe</option>
+                            <option value="">--Stats--</option>
+                            <option value="plus_vic">+ de Victoire</option>
+                            <option value="moins_def">- de Défaite</option>
                         </select>
                     </form>
                 </div>

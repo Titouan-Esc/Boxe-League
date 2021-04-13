@@ -1,14 +1,19 @@
 import TrierPar from "../components/TrierPar";
 import NavBar from "../components/NavBar";
+import Footer from '../components/Footer';
 import { UserContext } from '../User.Context';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import mma from '../Data';
+import MmaCard from "../components/MmaCard";
 
 
 
 const HomePage = () => {
 
     const {user, setUser} = useContext(UserContext);
+
+    const [data, setData] = useState(mma);
 
     const logout = async () => {
         await fetch('http://localhost:8000/api/user/logout' , {
@@ -52,8 +57,9 @@ const HomePage = () => {
             </div>
             <TrierPar/>
             <div className="champions">
-                
+                <MmaCard data={data}/>
             </div>
+            <Footer/>
         </main>
     )
 }
