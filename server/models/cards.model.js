@@ -11,7 +11,6 @@ const cardsSchema = mongoose.Schema({
     },
     description : {
         type : String,
-        required : true
     },
     atk : {
         type : Number,

@@ -20,6 +20,7 @@ const HomePage = () => {
         setUser(null);
     }
 
+
     let link;
 
     if(!user) {

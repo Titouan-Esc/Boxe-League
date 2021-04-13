@@ -6,44 +6,60 @@ import { Redirect } from 'react-router-dom';
 
 const Creation = () => {
 
-    const [name, setName] = useState('');
-    const [atk, setAtk] = useState('');
-    const [def, setDef] = useState('');
-    const [description , setDescription] = useState('');
-    const [image, setImage] = useState('');
     const [submit, setSubmit] = useState(false);
-    const [card, setCard] = useState([]);
+    const [card, setCard] = useState({
+        name : '',
+        atk : '',
+        def : '',
+        description : '',
+        image : ''
+    });
     const [redirect , setRedirect] = useState(false);
 
 
-    function uploadData() {
-        const cardUrl = 'http://localhost:8000/api/cards';
-        axios.post(cardUrl, card).then(function (response) {
-            console.log(response);
-        });
-    }
+    // function uploadData() {
+    //     const cardUrl = 'http://localhost:8000/api/cards';
+    //     axios.post(cardUrl, card).then(function (response) {
+    //         console.log(response);
+    //     });
+    // }
 
-    useEffect(() => {
-        console.log(card);
-        uploadData(card);
-    }, [card]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        setSubmit(true);
-        setCard({
-            ...{name},
-            ...{atk},
-            ...{def},
-            ...{description},
-            ...{image}
+        const formData = new FormData();
+        formData.append('name', card.name);
+        formData.append('atk', card.atk);
+        formData.append('def', card.def);
+        formData.append('description', card.description);
+        formData.append('image', card.image);
+
+        axios.post('http://localhost:8000/api/cards', formData)
+        .then(res => {
+            console.log(res);
+        })
+        .catch(err => {
+            console.log(err);
         });
 
-        console.log(card);
-        setRedirect(true)
+        setSubmit(true);
+
+        console.log({card, formData});
+
+
+        // setRedirect(true)
     }
 
+    const handleChange = (e) => {
+        setCard({...card, [e.target.name]: e.target.value});
+    }
+
+    const handleImage = (e) => {
+        setCard({...card, image: e.target.files[0]});
+    }
+
+    
     if(redirect){
         return <Redirect to='/champions'/>
     }
@@ -55,32 +71,32 @@ const Creation = () => {
                 <h1>Création du Personnage</h1>
             </div>
             <div className="conteneur_form">
-                <form className='form_personnage' onSubmit={handleSubmit} encType='multipart/form-data'>
+                <form className='form_personnage' onSubmit={handleSubmit} enctype='multipart/form-data'>
                     <div className="form_gauche">
                         <div className="creation_ligne">
                             <label htmlFor="">Nom :</label>
-                            <input type="text" name='name' value={name} onChange={(e) => setName(e.target.value)}/>
+                            <input type="text" name='name' value={card.name} onChange={handleChange}/>
                         </div>
 
                         <div className="creation_ligne">
                             <label htmlFor="atk">ATK :</label>
-                            <input type="number" name="atk" min="0" max="999" value={atk} onChange={(e) => setAtk(e.target.value)}/>
+                            <input type="number" name="atk" min="0" max="999" value={card.atk} onChange={handleChange}/>
                         </div>
 
                         <div className="creation_ligne">
                             <label htmlFor="def">DEF :</label>
-                            <input type="number" name="def" min="0" max="999" value={def} onChange={(e) => setDef(e.target.value)}/>
+                            <input type="number" name="def" min="0" max="999" value={card.def} onChange={handleChange}/>
                         </div>
 
                         <div className="creation_ligne">
-                            <label htmlFor="desc">Descirption :</label>
-                            <textarea name="desc" cols="30" rows="10" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
+                            <label htmlFor="description">Descirption :</label>
+                            <textarea name="description" cols="30" rows="10" value={card.description} onChange={handleChange}></textarea>
                         </div>
                     </div>
 
                     <div className="form_droite">
                         <label htmlFor="file">Image du champion :</label>
-                        <input type="file" name="file" onChange={changeHandler}/>
+                        <input type="file" name="file" accept='.png, .jpg, .jpeg' onChange={handleImage}/>
 
                         <button type="submit">Créer Personnage</button>
                     </div>
