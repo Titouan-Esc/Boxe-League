@@ -3,7 +3,6 @@ import React from 'react'
 const Combats = () => {
     return (
         <main className='combat'>
-            
             <div className="combat_top">
                 <img src="./logo/logo.png" alt="Logo du site"/>
 
@@ -14,16 +13,18 @@ const Combats = () => {
                         les personnages que vous venais de créer !
                     </p>
                 </div>
-
-                <div className="middel_combat">
-                    <h2>Combats</h2>
-                    <p>Sélectionner vos combattans</p>
-                </div>
-
-                <div className="les_combattants">
-                    ici les combattans
-                </div>
             </div>
+
+            <div className="middel_combat">
+                <h2>Combats</h2>
+                <p>Sélectionner vos combattans</p>
+            </div>
+
+            <div className="les_combattants">
+                ici les combattans
+            </div>
+
+            <button className='btn_fight'>combattez !</button>
         </main>
     )
 }

@@ -32,6 +32,22 @@ router.get('/:name', async (req,res) => {
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ! Upload de l'image 
 const uploadImage = async (req, res) => {
     console.log(req);
@@ -45,7 +61,7 @@ const uploadImage = async (req, res) => {
         )
         throw Error("Image invalide");
 
-        if(req.file.size > 500000)
+        if(req.file.size > 5000000)
         throw Error('Image trop grande');
 
 
@@ -57,7 +73,7 @@ const uploadImage = async (req, res) => {
     console.log(req);
     await pipeline(
         res.file.stream,
-        fs.createWriteStream(`${__dirname}/../../images/${fileName}`)
+        fs.createWriteStream(`${__dirname}/../images/${fileName}`)
     );
 
     console.log("ok");
@@ -66,6 +82,7 @@ const uploadImage = async (req, res) => {
         console.log("ok2");
         await Cards.findByIdAndUpdate(
             req.body.userId,
+            
             { $set: { picture : "./img/" + fileName } },
             { new: true, upsert: true, setDefaultsOnInsert: true},
             (err, docs) => {
@@ -80,8 +97,9 @@ const uploadImage = async (req, res) => {
 
 let upload = multer({ uploadImage });
 
-router.post('/', upload.single('image'), (req,res) => {
+router.post('/', upload.single('file'), (req,res) => {
 
+    
     const card = new Cards({
         name : req.body.name,
         image : req.file.filename,
@@ -100,6 +118,24 @@ router.post('/', upload.single('image'), (req,res) => {
         });
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 router.put('/:id', async (req,res) => {
     try {

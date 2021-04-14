@@ -33,7 +33,7 @@ const Creation = () => {
         formData.append('atk', card.atk);
         formData.append('def', card.def);
         formData.append('description', card.description);
-        formData.append('image', card.image);
+        formData.append('file', card.image);
 
         axios.post('http://localhost:8000/api/cards', formData)
         .then(res => {
@@ -71,10 +71,10 @@ const Creation = () => {
                 <h1>Création du Personnage</h1>
             </div>
             <div className="conteneur_form">
-                <form className='form_personnage' onSubmit={handleSubmit} enctype='multipart/form-data'>
+                <form className='form_personnage' onSubmit={handleSubmit} encType='multipart/form-data'>
                     <div className="form_gauche">
                         <div className="creation_ligne">
-                            <label htmlFor="">Nom :</label>
+                            <label htmlFor="name">Nom :</label>
                             <input type="text" name='name' value={card.name} onChange={handleChange}/>
                         </div>
 
@@ -95,8 +95,8 @@ const Creation = () => {
                     </div>
 
                     <div className="form_droite">
-                        <label htmlFor="image">Image du champion :</label>
-                        <input type="file" name="image" accept='.png, .jpg, .jpeg' onChange={handleImage}/>
+                        <label htmlFor="file">Image du champion :</label>
+                        <input type="file" name="file" accept='.png, .jpg, .jpeg' onChange={handleImage}/>
 
                         <button type="submit">Créer Personnage</button>
                     </div>

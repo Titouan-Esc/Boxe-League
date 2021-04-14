@@ -3,7 +3,61 @@
 
   .combat_top {
     height: 100vh;
+    @include flex-box(column, flex-start, center);
     background-image: url("../image/fond_combat.png");
     background-position: center;
+
+    img {
+      width: 10vw;
+      margin-bottom: 5em;
+    }
+
+    .top_text {
+      @include flex-box(column, space-between, center);
+
+      h1 {
+        font-family: "utopia";
+        font-size: 3em;
+        color: white;
+        margin-bottom: 1em;
+      }
+
+      p {
+        width: 60%;
+        font-family: "roboto-regular";
+        color: white;
+        text-align: center;
+      }
+    }
+  }
+
+  .middel_combat {
+    @include flex-box(column, space-between, center);
+    padding: 2em;
+
+    h2 {
+      font-family: "utopia";
+      font-size: 2em;
+      color: white;
+      margin-bottom: 1em;
+    }
+
+    p {
+      font-family: "roboto-bold";
+      color: white;
+    }
+  }
+
+  .btn_fight {
+    width: 15vw;
+    height: 5vh;
+    font-family: "utopia";
+    font-size: 1em;
+    text-transform: uppercase;
+    text-align: center;
+    border: 0;
+    border-radius: 37px;
+    color: black;
+    background-color: white;
   }
 }
