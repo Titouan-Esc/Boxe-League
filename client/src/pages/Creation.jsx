@@ -48,7 +48,7 @@ const Creation = () => {
         console.log({card, formData});
 
 
-        // setRedirect(true)
+        setRedirect(true)
     }
 
     const handleChange = (e) => {

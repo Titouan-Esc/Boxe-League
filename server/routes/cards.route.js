@@ -68,7 +68,7 @@ router.post('/upload', upload.single('file'), async (req, res) => {
         return res.status(201).json({ error });
     }
 
-    const fileName = req.body.name + ".jpeg";
+    const fileName = req.file.originalName;
     console.log(req.file);
     await pipeline(
         req.file.stream,
@@ -81,7 +81,7 @@ router.post('/upload', upload.single('file'), async (req, res) => {
         console.log("ok2");
         const card = new Cards({
             name : req.body.name,
-            image : `./upload/${req.body.name}`,
+            image : `./upload/${req.file.originalName}`,
             description : req.body.description,
             atk : req.body.atk,
             def : req.body.def,
