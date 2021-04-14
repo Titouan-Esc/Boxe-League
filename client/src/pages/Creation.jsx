@@ -35,7 +35,7 @@ const Creation = () => {
         formData.append('description', card.description);
         formData.append('file', card.image);
 
-        axios.post('http://localhost:8000/api/cards', formData)
+        axios.post('http://localhost:8000/api/cards/upload', formData)
         .then(res => {
             console.log(res);
         })

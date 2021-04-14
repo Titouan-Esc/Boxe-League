@@ -5,7 +5,6 @@ const fs = require('fs');
 const { promisify } = require('util');
 const pipeline = promisify(require("stream").pipeline);
 
-
 router.get('/', async (req,res) => {
     try {
         const cards = await Cards.find();
@@ -46,11 +45,11 @@ router.get('/:name', async (req,res) => {
 
 
 
-
+const upload = multer();
 
 // ! Upload de l'image 
-const uploadImage = async (req, res) => {
-    console.log(req);
+router.post('/upload', upload.single('file'), async (req, res) => {
+    
 
     try {
         
@@ -70,39 +69,36 @@ const uploadImage = async (req, res) => {
     }
 
     const fileName = req.body.name + ".jpeg";
-    console.log(req);
+    console.log(req.file);
     await pipeline(
-        res.file.stream,
-        fs.createWriteStream(`${__dirname}/../images/${fileName}`)
+        req.file.stream,
+        fs.createWriteStream(`${__dirname}/../../client/public/upload/${fileName}`)
     );
 
     console.log("ok");
 
     try {
         console.log("ok2");
-        await Cards.findByIdAndUpdate(
-            req.body.userId,
-            
-            { $set: { picture : "./img/" + fileName } },
-            { new: true, upsert: true, setDefaultsOnInsert: true},
-            (err, docs) => {
-                if(!err) return res.send(docs);
-                else return res.status(500).send({ message : err});
-            }
-        );
+        const card = new Cards({
+            name : req.body.name,
+            image : `./upload/${req.body.name}`,
+            description : req.body.description,
+            atk : req.body.atk,
+            def : req.body.def,
+        });
+        await card.save();
     } catch (error) {
         return res.status(500).send({ message : error});
     }
-};
+});
 
-let upload = multer({ uploadImage });
 
 router.post('/', upload.single('file'), (req,res) => {
-
+    console.log(req.file);
     
     const card = new Cards({
         name : req.body.name,
-        image : req.file.filename,
+        image : req.file.originalName,
         description : req.body.description,
         atk : req.body.atk,
         def : req.body.def,
