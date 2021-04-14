@@ -94,7 +94,6 @@ router.post('/upload', upload.single('file'), async (req, res) => {
 
 
 router.post('/', upload.single('file'), (req,res) => {
-    console.log(req.file);
     
     const card = new Cards({
         name : req.body.name,

@@ -1,30 +1,4 @@
-import axios from 'axios';
-import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
-
-
-const Card = ({ cards , addCount}) => {
-
-    const [del, setDel] = useState('');
-
-        async function deleteCard(id) {
-            try {
-                const res = await axios.delete(`http://localhost:8000/api/cards/${id}`);
-                console.log(res.data);
-                newOp();
-            } catch (error) {
-                console.log(error);
-            }
-        }
-
-        const newOp = () => {
-            addCount();
-        }
-  
-        if(del) {
-            return <Redirect to='/champions'/>
-        }
-
+const CardsFight = ({ cards }) => {
     return (
         <>
           {cards.map((c) => {
@@ -46,7 +20,9 @@ const Card = ({ cards , addCount}) => {
                             </div>
                         </div>
                     </div>
-                    <button className='btn_supr' onClick={() => deleteCard(c._id)}>Supprimer</button>
+                    <form className='check_form'>
+                        <input type="checkbox" id='check'/>
+                    </form>
                  </div>
               )
           })}  
@@ -54,4 +30,5 @@ const Card = ({ cards , addCount}) => {
     )
 }
 
-export default Card
+export default CardsFight
+
