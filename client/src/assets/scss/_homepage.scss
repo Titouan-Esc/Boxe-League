@@ -65,6 +65,7 @@ main {
     }
   }
   .champions {
+    position: relative;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -73,6 +74,17 @@ main {
     background-image: url("../image/wp2776818-boxing-ring-wallpaper.png");
     background-position: center;
     padding: 5em;
+
+    form {
+      position: absolute;
+      top: 2em;
+      left: 2em;
+
+      input {
+        width: 15vw;
+        height: 4vh;
+      }
+    }
 
     .mma_card {
       width: 20vw;

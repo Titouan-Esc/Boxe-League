@@ -1,4 +1,12 @@
+import React, { useState } from 'react';
+
+
 const TrierPar = () => {
+
+    const [search, setSearch] = useState('');
+    const [cat, setCat] = useState('');
+    const [stats, setStats] = useState('');
+
     return (
         <div className='trie_par'>
             <h3>Trié par :</h3>
@@ -6,7 +14,7 @@ const TrierPar = () => {
                 <div className="trie">
                     <p>Catégories</p>
                     <form>
-                        <select name="categories" id="categories">
+                        <select name="categories" onChange={(e) => setCat(e.target.value)}>
                             <option value="">--Choisissez votre catégories--</option>
                             <option value="poids-mouches">Poids Mouches</option>
                             <option value="poids-coqs">Poids Coqs</option>
@@ -22,13 +30,13 @@ const TrierPar = () => {
                 <div className="trie">
                     <p>Nom</p>
                     <form>
-                        <input type="search"/>
+                        <input type="text" placeholder='Cherchez...' onChange={(e) => setSearch(e.target.value)}/>
                     </form>
                 </div>
                 <div className="trie">
                     <p>Stats</p>
                     <form>
-                        <select name="popularite" id="popularite">
+                        <select name="popularite" onChange={(e) => setStats(e.target.value)}>
                             <option value="">--Stats--</option>
                             <option value="plus_vic">+ de Victoire</option>
                             <option value="moins_def">- de Défaite</option>

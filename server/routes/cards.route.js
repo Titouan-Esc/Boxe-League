@@ -32,6 +32,7 @@ router.get('/:name', async (req,res) => {
 });
 
 
+// ! Upload de l'image 
 const uploadImage = async (req, res) => {
     console.log(req);
 
@@ -79,7 +80,7 @@ const uploadImage = async (req, res) => {
 
 let upload = multer({ uploadImage });
 
-router.post('/', upload.single('file'), (req,res) => {
+router.post('/', upload.single('image'), (req,res) => {
 
     const card = new Cards({
         name : req.body.name,

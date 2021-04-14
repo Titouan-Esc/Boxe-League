@@ -95,8 +95,8 @@ const Creation = () => {
                     </div>
 
                     <div className="form_droite">
-                        <label htmlFor="file">Image du champion :</label>
-                        <input type="file" name="file" accept='.png, .jpg, .jpeg' onChange={handleImage}/>
+                        <label htmlFor="image">Image du champion :</label>
+                        <input type="file" name="image" accept='.png, .jpg, .jpeg' onChange={handleImage}/>
 
                         <button type="submit">Créer Personnage</button>
                     </div>

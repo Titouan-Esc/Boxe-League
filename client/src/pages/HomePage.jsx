@@ -1,4 +1,3 @@
-import TrierPar from "../components/TrierPar";
 import NavBar from "../components/NavBar";
 import Footer from '../components/Footer';
 import { UserContext } from '../User.Context';
@@ -55,10 +54,7 @@ const HomePage = () => {
             <div className="bandeau">
                 <h2>Champions</h2>
             </div>
-            <TrierPar/>
-            <div className="champions">
                 <MmaCard data={data}/>
-            </div>
             <Footer/>
         </main>
     )
