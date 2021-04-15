@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import CardsFight from '../components/CardsFight';
 
@@ -7,6 +8,7 @@ const url = 'http://localhost:8000/api/cards';
 const Combats = () => {
 
     const [cards, setCards] = useState([]);
+    const [combat, setCombat] = useState(false);
 
     async function fetchCards() {
         try {
@@ -16,6 +18,7 @@ const Combats = () => {
         } catch (error) {
             console.log(error)
         }
+        
     }
 
     useEffect(() => {
@@ -23,10 +26,15 @@ const Combats = () => {
     }, []);
 
 
+    if(combat) {
+        return <Redirect to='/arene'/>
+    }
+
+
     return (
         <main className='combat'>
             <div className="combat_top">
-                <img src="./logo/logo.png" alt="Logo du site"/>
+                <Link to='/'><img src="./logo/logo.png" alt="Logo du site"/></Link>
 
                 <div className="top_text">
                     <h1>Boxe League</h1>

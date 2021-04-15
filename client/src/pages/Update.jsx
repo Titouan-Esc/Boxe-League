@@ -1,21 +1,19 @@
-import { Link } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useParams } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 
-
-const Creation = () => {
-
+const Update = () => {
     const [submit, setSubmit] = useState(false);
     const [card, setCard] = useState({
         name : '',
         atk : '',
         def : '',
-        description : '',
-        image : ''
+        description : ''
     });
     const [redirect , setRedirect] = useState(false);
 
+    // const id = useParams;
+    // console.log(id);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,11 +23,11 @@ const Creation = () => {
         formData.append('atk', card.atk);
         formData.append('def', card.def);
         formData.append('description', card.description);
-        formData.append('file', card.image);
 
-        axios.post('http://localhost:8000/api/cards/upload', formData)
+        axios.put(`http://localhost:8000/api/cards/`, formData)
         .then(res => {
             console.log(res);
+            console.log("ok");
         })
         .catch(err => {
             console.log(err);
@@ -39,7 +37,6 @@ const Creation = () => {
 
         console.log({card, formData});
 
-
         setRedirect(true)
     }
 
@@ -47,22 +44,12 @@ const Creation = () => {
         setCard({...card, [e.target.name]: e.target.value});
     }
 
-    const handleImage = (e) => {
-        setCard({...card, image: e.target.files[0]});
-    }
-
-    
     if(redirect){
         return <Redirect to='/champions'/>
     }
 
     return (
-        <main className='creation_personnage'>
-            <div className="creation_top">
-                <Link to='/champions'><img src="./logo/arrow.png" alt="Retour en arrière"className="return"/></Link>
-                <h1>Création du Personnage</h1>
-            </div>
-            <div className="conteneur_form">
+        <div className='update'>
                 <form className='form_personnage' onSubmit={handleSubmit} encType='multipart/form-data'>
                     <div className="form_gauche">
                         <div className="creation_ligne">
@@ -85,17 +72,12 @@ const Creation = () => {
                             <textarea name="description" cols="30" rows="10" value={card.description} onChange={handleChange}></textarea>
                         </div>
                     </div>
-
                     <div className="form_droite">
-                        <label htmlFor="file">Image du champion :</label>
-                        <input type="file" name="file" accept='.png, .jpg, .jpeg' onChange={handleImage}/>
-
-                        <button type="submit">Créer Personnage</button>
+                        <button type="submit">Modifier le Personnage</button>
                     </div>
                 </form>
-            </div>
-        </main>
+        </div>
     )
 }
 
-export default Creation
+export default Update

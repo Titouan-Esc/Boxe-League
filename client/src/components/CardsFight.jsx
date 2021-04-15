@@ -21,7 +21,7 @@ const CardsFight = ({ cards }) => {
                         </div>
                     </div>
                     <form className='check_form'>
-                        <input type="checkbox" id='check'/>
+                        <input type="radio" id='check'/>
                     </form>
                  </div>
               )

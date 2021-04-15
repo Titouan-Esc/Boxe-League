@@ -8,6 +8,8 @@ import Combats from './pages/Combats';
 import React, { useMemo, useEffect, useState } from 'react';
 import {UserContext} from './User.Context';
 import Creation from './pages/Creation';
+import AreneCombat from './pages/AreneCombat';
+import Update from './pages/Update';
 
 function App() {
 
@@ -45,6 +47,8 @@ function App() {
             <Route path='/champions' component={VosChampions}/>
             <Route path='/combats' component={Combats}/>
             <Route path='/creation' component={Creation}/>
+            <Route path='/arene' component={AreneCombat}/>
+            <Route path='/update' component={Update}/>
           </Switch>
         </UserContext.Provider>
       </Router>

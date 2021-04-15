@@ -18,7 +18,7 @@ router.get('/', async (req,res) => {
 
 });
 
-router.get('/:name', async (req,res) => {
+router.get('/:id', async (req,res) => {
     try {
         const card = await Cards.findOne({ name : req.body.name });
         res.json(card);
@@ -140,7 +140,6 @@ router.put('/:id', async (req,res) => {
             {
                 $set : {
                     name : req.body.name ?? cardToUpdate.name,
-                    image : req.body.image ?? cardToUpdate.image,
                     description : req.body.description ?? cardToUpdate.description,
                     atk : req.body.atk ?? cardToUpdate.atk,
                     def : req.body.def ?? cardToUpdate.def
