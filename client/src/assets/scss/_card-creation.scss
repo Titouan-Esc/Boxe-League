@@ -30,6 +30,7 @@
       .carte_desc {
         width: 95%;
         @include flex-box(row, center, center);
+        text-align: center;
         border: 3px solid $color_one;
         padding: 5px;
       }
@@ -43,15 +44,22 @@
     }
   }
 
-  .btn_supr {
+  .btn_update {
     margin: 10px;
   }
 
-  .check_form {
-    #check {
-      width: 5vw;
-      height: 5vh;
-      margin: 20px;
+  .btn_supr {
+    width: 20vw;
+    height: 5vh;
+    font-family: "utopia";
+    font-size: 1em;
+    text-align: center;
+    border: 0;
+    border-radius: 22px;
+    margin: 10px;
+
+    &:hover {
+      cursor: pointer;
     }
   }
 }

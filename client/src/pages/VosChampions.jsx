@@ -52,7 +52,10 @@ const VosChampions = () => {
                 <h2>Votre collection</h2>
             </div>
             <div className="personnages">
-                <Link to='/creation'><button>Création du personnage</button></Link>
+                <div className="personnages_btn">
+                    <Link to='/creation'><button>Création du personnage</button></Link>
+                    <Link to='/combats'><button>Combattez</button></Link>
+                </div>
                 <Card cards={cards} addCount={addCount}/>
             </div>
         </main>

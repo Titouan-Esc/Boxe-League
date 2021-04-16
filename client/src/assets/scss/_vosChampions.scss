@@ -49,17 +49,22 @@
     @include flex-box(column, flex-start, center);
     padding: 30px;
 
-    button {
-      width: 20vw;
-      height: 5vh;
-      font-family: "utopia";
-      font-size: 1em;
-      text-align: center;
-      border: 0;
-      border-radius: 22px;
+    .personnages_btn {
+      width: 80%;
+      @include flex-box(row, space-between, center);
 
-      &:hover {
-        cursor: pointer;
+      button {
+        width: 20vw;
+        height: 5vh;
+        font-family: "utopia";
+        font-size: 1em;
+        text-align: center;
+        border: 0;
+        border-radius: 22px;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
 

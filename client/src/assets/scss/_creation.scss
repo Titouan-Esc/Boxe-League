@@ -43,6 +43,7 @@
 
         .creation_ligne {
           @include flex-box(row, flex-start, center);
+          margin: 1em;
 
           label {
             font-family: "roboto-bold";

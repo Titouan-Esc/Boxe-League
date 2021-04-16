@@ -63,6 +63,10 @@
   }
 
   .select_champions {
-    @include flex-box(row, space-around, center);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
   }
 }

@@ -1,0 +1,30 @@
+.update {
+  height: 100vh;
+  @include flex-box(row, center, center);
+  background-color: $color_one;
+
+  .form_personnage {
+    width: 50%;
+    height: 60%;
+    @include flex-box(row, space-between, center);
+    background-color: white;
+    border-radius: 8px;
+    padding: 50px;
+
+    .creation_ligne {
+      @include flex-box(row, flex-start, center);
+      margin: 1em;
+
+      label {
+        font-family: "roboto-bold";
+        font-size: 20px;
+        padding-right: 50px;
+      }
+
+      input {
+        width: 15vw;
+        height: 5vh;
+      }
+    }
+  }
+}
