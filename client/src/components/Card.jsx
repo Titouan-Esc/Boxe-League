@@ -1,15 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { Redirect, useHistory } from 'react-router-dom';
-
-
-
+import { Link, Redirect } from 'react-router-dom';
 const Card = ({ cards , addCount}) => {
-
     const [del, setDel] = useState('');
-    const history = useHistory();
-    
-
         // ? Fonction asynchrone pour la suppression d'une carte
         async function deleteCard(id) {
             try {
@@ -21,22 +14,12 @@ const Card = ({ cards , addCount}) => {
             }
         }
 
-        const  updateCard = (id) => {
-            console.log(id);
-            history.push(`/update/${id}`);
-        }
-
-
         const newOp = () => {
             addCount();
         }
-  
-
         if(del) {
             return <Redirect to='/champions'/>
         }
-
-
     return (
         <>
           {cards.map((c) => {
@@ -58,7 +41,7 @@ const Card = ({ cards , addCount}) => {
                             </div>
                         </div>
                     </div>
-                    <button className='btn_update' onClick={() => updateCard(c._id)}>Modifier</button>
+                    <Link to={`/update/${_id}`} className='btn_update'>Modifier</Link>
                     <button className='btn_supr' onClick={() => deleteCard(c._id)}>Supprimer</button>
                  </div>
               )
@@ -66,5 +49,4 @@ const Card = ({ cards , addCount}) => {
         </>
     )
 }
-
 export default Card

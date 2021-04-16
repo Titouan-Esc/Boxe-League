@@ -48,7 +48,7 @@ function App() {
             <Route path='/combats' component={Combats}/>
             <Route path='/creation' component={Creation}/>
             <Route path='/arene' component={AreneCombat}/>
-            <Route path='/update' component={Update}/>
+            <Route path='/update/:id' component={Update}/>
           </Switch>
         </UserContext.Provider>
       </Router>

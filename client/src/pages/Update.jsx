@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useParams } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 
 const Update = () => {
     const [submit, setSubmit] = useState(false);
@@ -12,21 +12,15 @@ const Update = () => {
     });
     const [redirect , setRedirect] = useState(false);
 
-    // const id = useParams;
-    // console.log(id);
+    let { id } = useParams();
+    console.log(id);
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const formData = new FormData();
-        formData.append('name', card.name);
-        formData.append('atk', card.atk);
-        formData.append('def', card.def);
-        formData.append('description', card.description);
-
-        axios.put(`http://localhost:8000/api/cards/`, formData)
+        axios.put(`http://localhost:8000/api/cards/${id}`, card)
         .then(res => {
-            console.log(res);
+            console.log(res.data);
             console.log("ok");
         })
         .catch(err => {
@@ -35,7 +29,7 @@ const Update = () => {
 
         setSubmit(true);
 
-        console.log({card, formData});
+        console.log(card);
 
         setRedirect(true)
     }
