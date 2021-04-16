@@ -7,7 +7,7 @@ const pipeline = promisify(require("stream").pipeline);
 
 router.get('/', async (req,res) => {
     try {
-        const cards = await Cards.find();
+        const cards = await Cards.find({}).populate('_user').exec(function(error, ));
         res.json(cards);
     } catch (error) {
         console.warn(error)
@@ -49,8 +49,6 @@ const upload = multer();
 
 // ! Upload de l'image 
 router.post('/upload', upload.single('file'), async (req, res) => {
-    
-
     try {
         
         if(

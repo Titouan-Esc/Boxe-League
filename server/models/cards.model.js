@@ -22,7 +22,7 @@ const cardsSchema = mongoose.Schema({
         min : 0,
         max : 999
     },
-    user : [{ type : mongoose.Schema.Types.ObjectId, ref : 'User'}]
+    _user : [{ type : mongoose.Schema.Types.ObjectId, ref : 'User'}]
 });
 
 

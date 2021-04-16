@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
         type : String,
         required : true
     },
-    cards : [{ type : mongoose.Schema.Types.ObjectId, ref : 'Cards'}]
+    _cards : [{ type : mongoose.Schema.Types.ObjectId, ref : 'Cards'}]
 });
 
 
