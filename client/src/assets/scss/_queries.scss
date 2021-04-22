@@ -1,0 +1,1168 @@
+// ! Premier breakpoint
+@media screen and (max-width: 1066px) {
+  // ? Page connection
+  .connect {
+    .conteneur {
+      .form_connect {
+        .liens {
+          button {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  // ? Home page
+  main {
+    .champions {
+      .mma_card {
+        h3 {
+          font-size: 0.8em;
+        }
+
+        img {
+          width: 15vw;
+        }
+
+        p {
+          font-size: 0.7em;
+        }
+      }
+    }
+  }
+
+  // ? Page register
+  .register {
+    .conteneur_register {
+      .register_btn {
+        button {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+// ! Second breakpoint
+@media screen and (max-width: 943px) {
+  // ? Home page
+  main {
+    .champions {
+      .mma_card {
+        h3 {
+          font-size: 0.7em;
+        }
+
+        img {
+          width: 15vw;
+        }
+
+        p {
+          font-size: 0.6em;
+        }
+      }
+    }
+  }
+
+  // ? Footer
+  footer {
+    h2 {
+      font-size: 1.4em;
+    }
+  }
+
+  // ? Cartes
+  .conteneur_carte {
+    .fond_carte {
+      .carte {
+        h2 {
+          font-size: 1.2em;
+        }
+      }
+    }
+
+    .btn_update {
+      font-size: 0.8em;
+    }
+
+    .btn_supr {
+      font-size: 0.8em;
+    }
+  }
+
+  // ? Vos champions
+  .vos_champions {
+    .personnages {
+      .personnages_btn {
+        button {
+          font-size: 0.8em;
+        }
+      }
+    }
+  }
+}
+
+// ! Troisième breakpoint
+@media screen and (max-width: 910px) {
+  // ? Home page
+  main {
+    .champions {
+      padding: 4em;
+      .mma_card {
+        padding: 15px;
+        h3 {
+          font-size: 0.7em;
+        }
+
+        img {
+          width: 15vw;
+        }
+
+        .def_vic {
+          .def {
+            .top_def {
+              height: 4vh;
+              font-size: 15px;
+            }
+            p {
+              font-size: 15px;
+            }
+          }
+
+          .vic {
+            .top_vic {
+              height: 4vh;
+              font-size: 15px;
+            }
+            p {
+              font-size: 15px;
+            }
+          }
+        }
+
+        p {
+          font-size: 0.6em;
+        }
+      }
+    }
+  }
+}
+
+// ! Quatrième breakpoint
+@media screen and (max-width: 749px) {
+  // ? Page connection
+  .connect {
+    .conteneur {
+      .form_connect {
+        .form {
+          .input {
+            label {
+              font-size: 15px;
+            }
+          }
+        }
+
+        .liens {
+          button {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  // ? Page register
+  .register {
+    .conteneur_register {
+      .form_register {
+        height: 30vh;
+        .input_register {
+          label {
+            font-size: 15px;
+          }
+        }
+      }
+      .register_btn {
+        button {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  // ? Home page
+  main {
+    .top {
+      .user {
+        .btn-login {
+          font-size: 0.7em;
+        }
+        .logout {
+          font-size: 0.7em;
+        }
+      }
+    }
+    .bandeau {
+      h2 {
+        font-size: 1.2em;
+      }
+    }
+    .champions {
+      padding: 3em;
+      .mma_card {
+        width: 25vw;
+        padding: 15px;
+        h3 {
+          font-size: 0.7em;
+        }
+
+        img {
+          width: 15vw;
+        }
+
+        .def_vic {
+          .def {
+            .top_def {
+              height: 4vh;
+              font-size: 15px;
+            }
+            p {
+              font-size: 12px;
+            }
+          }
+
+          .vic {
+            .top_vic {
+              height: 4vh;
+              font-size: 15px;
+            }
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+
+        p {
+          font-size: 0.6em;
+        }
+      }
+    }
+  }
+
+  // ? Footer
+  footer {
+    h2 {
+      font-size: 1.2em;
+    }
+  }
+
+  // ? Cartes
+  .conteneur_carte {
+    .fond_carte {
+      width: 40vw;
+      height: 60vh;
+      .carte {
+        h2 {
+          font-size: 1em;
+        }
+      }
+    }
+
+    .btn_update {
+      font-size: 0.8em;
+    }
+
+    .btn_supr {
+      font-size: 0.8em;
+    }
+  }
+
+  // ? Vos champions
+  .vos_champions {
+    .personnages {
+      .personnages_btn {
+        button {
+          font-size: 0.7em;
+        }
+      }
+    }
+  }
+}
+
+// ! Cinquième breakpoint
+@media screen and (max-width: 703px) {
+  // ? Home page
+  main {
+    .champions {
+      padding: 3em;
+      .mma_card {
+        width: 27vw;
+        padding: 15px;
+        h3 {
+          font-size: 0.6em;
+        }
+
+        img {
+          width: 15vw;
+        }
+
+        .def_vic {
+          .def {
+            .top_def {
+              height: 4vh;
+              font-size: 15px;
+            }
+            p {
+              font-size: 12px;
+            }
+          }
+
+          .vic {
+            .top_vic {
+              height: 4vh;
+              font-size: 15px;
+            }
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+
+        p {
+          font-size: 0.6em;
+        }
+      }
+    }
+  }
+}
+
+// ! Sixième breakpoint
+@media screen and (max-width: 591px) {
+  // ? Page connection
+  .connect {
+    .conteneur {
+      .form_connect {
+        .form {
+          .input {
+            label {
+              font-size: 13px;
+              padding-right: 40px;
+            }
+          }
+        }
+
+        .liens {
+          button {
+            width: 12vw;
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  // ? Page register
+  .register {
+    .conteneur_register {
+      .form_register {
+        height: 30vh;
+        .input_register {
+          label {
+            font-size: 12px;
+            margin-bottom: 5px;
+          }
+          input {
+            margin-bottom: 5px;
+          }
+        }
+      }
+      .register_btn {
+        height: 70%;
+        button {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  // ? Home page
+  main {
+    .top {
+      .user {
+        .btn-login {
+          width: 15vw;
+          font-size: 0.7em;
+        }
+        .logout {
+          width: 15vw;
+          font-size: 0.7em;
+        }
+      }
+    }
+    .champions {
+      padding: 3em;
+      .mma_card {
+        width: 30vw;
+        padding: 15px;
+        h3 {
+          font-size: 0.6em;
+        }
+
+        img {
+          width: 15vw;
+        }
+
+        .def_vic {
+          .def {
+            .top_def {
+              height: 4vh;
+              font-size: 15px;
+            }
+            p {
+              font-size: 12px;
+            }
+          }
+
+          .vic {
+            .top_vic {
+              height: 4vh;
+              font-size: 15px;
+            }
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+
+        p {
+          font-size: 0.6em;
+        }
+      }
+    }
+  }
+
+  // ? Combats
+  .combat {
+    .middel_combat {
+      .btn_fight {
+        font-size: 0.7em;
+      }
+    }
+  }
+}
+
+// ! Septième breakpoint
+@media screen and (max-width: 499px) {
+  // ? NavBar
+  header {
+    nav {
+      a {
+        font-size: 0.7em;
+      }
+      img {
+        width: 15vw;
+        margin: 70px 50px 0 50px;
+      }
+    }
+  }
+
+  // ? Home page
+  main {
+    .top {
+      .user {
+        .btn-login {
+          width: 17vw;
+          font-size: 0.7em;
+        }
+        .logout {
+          width: 17vw;
+          font-size: 0.6em;
+        }
+      }
+    }
+    .champions {
+      padding: 3em;
+
+      form {
+        input {
+          width: 20vw;
+          height: 3vh;
+        }
+      }
+      .mma_card {
+        width: 35vw;
+        height: 45vh;
+        padding: 15px;
+        h3 {
+          font-size: 0.6em;
+        }
+
+        img {
+          width: 15vw;
+        }
+
+        .def_vic {
+          .def {
+            .top_def {
+              height: 4vh;
+              font-size: 15px;
+            }
+            p {
+              font-size: 12px;
+            }
+          }
+
+          .vic {
+            .top_vic {
+              height: 4vh;
+              font-size: 15px;
+            }
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+
+        p {
+          font-size: 0.6em;
+        }
+      }
+    }
+  }
+
+  // ? Page connection
+  .connect {
+    .return {
+      width: 5vw;
+    }
+    .conteneur {
+      img {
+        width: 14vw;
+      }
+      .form_connect {
+        width: 70%;
+        padding: 30px;
+        .form {
+          .input {
+            label {
+              font-size: 13px;
+              padding-right: 40px;
+            }
+
+            input {
+              width: 17vw;
+              height: 4vh;
+            }
+          }
+        }
+
+        .liens {
+          a {
+            font-size: 10px;
+          }
+          button {
+            width: 15vw;
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  // ? Page register
+  .register {
+    img {
+      width: 10vw;
+    }
+    .conteneur_register {
+      .form_register {
+        width: 70vw;
+        height: 30vh;
+        .input_register {
+          label {
+            font-size: 12px;
+            margin-bottom: 5px;
+          }
+          input {
+            margin-bottom: 5px;
+          }
+        }
+      }
+      .register_btn {
+        height: 70%;
+        button {
+          width: 15vw;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+// ! Huitième breakpoint
+@media screen and (max-width: 427px) {
+  // ? NavBar
+  header {
+    nav {
+      a {
+        font-size: 0.7em;
+      }
+      img {
+        width: 17vw;
+        margin: 70px 50px 0 50px;
+      }
+    }
+  }
+
+  // ? Home page
+  main {
+    .top {
+      .user {
+        h3 {
+          font-size: 1em;
+        }
+        .btn-login {
+          width: 19vw;
+          font-size: 0.7em;
+        }
+        .logout {
+          width: 19vw;
+          font-size: 0.6em;
+        }
+      }
+    }
+    .champions {
+      padding: 3em;
+
+      form {
+        input {
+          width: 22vw;
+          height: 3vh;
+        }
+      }
+      .mma_card {
+        width: 42vw;
+        height: 45vh;
+        padding: 15px;
+        h3 {
+          font-size: 0.6em;
+        }
+
+        img {
+          width: 20vw;
+        }
+
+        .def_vic {
+          .def {
+            .top_def {
+              height: 4vh;
+              font-size: 15px;
+            }
+            p {
+              font-size: 12px;
+            }
+          }
+
+          .vic {
+            .top_vic {
+              height: 4vh;
+              font-size: 15px;
+            }
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+
+        p {
+          font-size: 0.6em;
+        }
+      }
+    }
+  }
+
+  // ? Page connection
+  .connect {
+    .return {
+      width: 5vw;
+    }
+    .conteneur {
+      img {
+        width: 15vw;
+      }
+      .form_connect {
+        width: 80%;
+        height: 45vh;
+        padding: 25px;
+        .form {
+          .input {
+            label {
+              font-size: 13px;
+              padding-right: 40px;
+            }
+
+            input {
+              width: 25vw;
+              height: 3vh;
+            }
+          }
+        }
+
+        .liens {
+          a {
+            font-size: 9px;
+          }
+          button {
+            width: 17vw;
+            font-size: 9px;
+          }
+        }
+      }
+    }
+  }
+
+  // ? Page register
+  .register {
+    img {
+      width: 15vw;
+    }
+    .conteneur_register {
+      .form_register {
+        width: 80vw;
+        height: 30vh;
+        .input_register {
+          label {
+            font-size: 12px;
+            margin-bottom: 7px;
+          }
+          input {
+            margin-bottom: 7px;
+          }
+        }
+      }
+      .register_btn {
+        height: 50%;
+        button {
+          width: 17vw;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  // ? Cartes
+  .conteneur_carte {
+    .fond_carte {
+      width: 55vw;
+      height: 60vh;
+      .carte {
+        h2 {
+          font-size: 1em;
+        }
+      }
+    }
+
+    .btn_update {
+      font-size: 0.7em;
+    }
+
+    .btn_supr {
+      font-size: 0.7em;
+    }
+  }
+
+  // ? Vos champions
+  .vos_champions {
+    .vos_champions_top {
+      .top_top {
+        .return {
+          width: 6vw;
+        }
+        img {
+          width: 15vw;
+        }
+      }
+      .top_text {
+        h1 {
+          font-size: 2em;
+        }
+        p {
+          width: 70%;
+          font-size: 0.8em;
+        }
+      }
+    }
+    .personnages {
+      .personnages_btn {
+        button {
+          width: 25vw;
+          font-size: 0.7em;
+        }
+      }
+    }
+  }
+}
+
+// ! Neuvième breakpoint
+@media screen and (max-width: 359px) {
+  // ? Home page
+  main {
+    .top {
+      h1 {
+        font-size: 2em;
+        margin-bottom: 25px;
+      }
+      p {
+        width: 70%;
+        font-size: 1em;
+      }
+      .user {
+        h3 {
+          font-size: 0.8em;
+        }
+        .btn-login {
+          width: 25vw;
+          font-size: 0.7em;
+        }
+        .logout {
+          width: 25vw;
+          font-size: 0.6em;
+        }
+      }
+    }
+    .champions {
+      padding: 3em;
+
+      form {
+        input {
+          width: 26vw;
+          height: 3vh;
+        }
+      }
+      .mma_card {
+        width: 50vw;
+        height: 45vh;
+        padding: 15px;
+        h3 {
+          font-size: 0.6em;
+        }
+
+        img {
+          width: 20vw;
+        }
+
+        .def_vic {
+          .def {
+            .top_def {
+              height: 4vh;
+              font-size: 15px;
+            }
+            p {
+              font-size: 12px;
+            }
+          }
+
+          .vic {
+            .top_vic {
+              height: 4vh;
+              font-size: 15px;
+            }
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+
+        p {
+          font-size: 0.6em;
+        }
+      }
+    }
+  }
+
+  // ? Page connection
+  .connect {
+    .return {
+      width: 5vw;
+    }
+    .conteneur {
+      img {
+        width: 20vw;
+      }
+      .form_connect {
+        width: 90%;
+        height: 40vh;
+        padding: 25px;
+        .form {
+          .input {
+            label {
+              font-size: 13px;
+              padding-right: 40px;
+            }
+
+            input {
+              width: 25vw;
+              height: 3vh;
+            }
+          }
+        }
+
+        .liens {
+          a {
+            font-size: 9px;
+          }
+          button {
+            width: 20vw;
+            height: 4vh;
+            font-size: 9px;
+          }
+        }
+      }
+    }
+  }
+
+  // ? Page register
+  .register {
+    img {
+      width: 15vw;
+    }
+    .conteneur_register {
+      .form_register {
+        width: 90vw;
+        height: 30vh;
+        .input_register {
+          label {
+            font-size: 10px;
+            margin-bottom: 7px;
+          }
+          input {
+            margin-bottom: 7px;
+          }
+        }
+      }
+      .register_btn {
+        height: 35%;
+        button {
+          width: 19vw;
+          height: 4vh;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  // ? Cartes
+  .conteneur_carte {
+    .fond_carte {
+      width: 70vw;
+      height: 60vh;
+      .carte {
+        h2 {
+          font-size: 1em;
+        }
+        .carte_img {
+          img {
+            width: 35vw;
+          }
+        }
+      }
+    }
+
+    .btn_update {
+      font-size: 0.7em;
+    }
+
+    .btn_supr {
+      width: 25vw;
+      font-size: 0.7em;
+    }
+  }
+
+  // ? Vos champions
+  .vos_champions {
+    .vos_champions_top {
+      .top_top {
+        .return {
+          width: 6vw;
+        }
+        img {
+          width: 15vw;
+        }
+      }
+      .top_text {
+        h1 {
+          font-size: 2em;
+        }
+        p {
+          width: 70%;
+          font-size: 0.8em;
+        }
+      }
+    }
+    .personnages {
+      .personnages_btn {
+        button {
+          width: 30vw;
+          font-size: 0.7em;
+        }
+      }
+    }
+  }
+}
+
+// ! Last breakpoint
+@media screen and (max-width: 321px) {
+  // ? Home page
+  main {
+    .top {
+      h1 {
+        font-size: 2em;
+        margin-bottom: 25px;
+      }
+      p {
+        width: 70%;
+        font-size: 1em;
+      }
+      .user {
+        h3 {
+          font-size: 0.8em;
+        }
+        .btn-login {
+          width: 25vw;
+          font-size: 0.7em;
+        }
+        .logout {
+          width: 25vw;
+          font-size: 0.6em;
+        }
+      }
+    }
+    .champions {
+      padding: 3em;
+
+      form {
+        input {
+          width: 30vw;
+          height: 3vh;
+        }
+      }
+      .mma_card {
+        width: 60vw;
+        height: 45vh;
+        padding: 15px;
+        h3 {
+          font-size: 0.6em;
+        }
+
+        img {
+          width: 30vw;
+        }
+
+        .def_vic {
+          .def {
+            .top_def {
+              height: 4vh;
+              font-size: 15px;
+            }
+            p {
+              font-size: 12px;
+            }
+          }
+
+          .vic {
+            .top_vic {
+              height: 4vh;
+              font-size: 15px;
+            }
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+
+        p {
+          font-size: 0.6em;
+        }
+      }
+    }
+  }
+
+  // ? Page connection
+  .connect {
+    .return {
+      width: 7vw;
+    }
+    .conteneur {
+      img {
+        width: 25vw;
+      }
+      .form_connect {
+        width: 90%;
+        height: 40vh;
+        padding: 25px;
+        .form {
+          .input {
+            label {
+              font-size: 13px;
+              padding-right: 40px;
+            }
+
+            input {
+              width: 25vw;
+              height: 3vh;
+            }
+          }
+        }
+
+        .liens {
+          a {
+            font-size: 9px;
+          }
+          button {
+            width: 25vw;
+            height: 4vh;
+            font-size: 9px;
+          }
+        }
+      }
+    }
+  }
+
+  // ? Cartes
+  .conteneur_carte {
+    .fond_carte {
+      width: 70vw;
+      height: 60vh;
+      .carte {
+        h2 {
+          font-size: 1em;
+        }
+        .carte_img {
+          img {
+            width: 35vw;
+          }
+        }
+        .carte_desc {
+          p {
+            font-size: 0.8em;
+          }
+        }
+        .atk_def {
+          p {
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+
+    .btn_update {
+      font-size: 0.7em;
+    }
+
+    .btn_supr {
+      width: 25vw;
+      font-size: 0.7em;
+    }
+  }
+}

@@ -64,6 +64,7 @@ main {
       color: white;
     }
   }
+
   .champions {
     position: relative;
     display: flex;
@@ -146,22 +147,6 @@ main {
             color: $color_vic;
             padding-right: 1em;
           }
-        }
-      }
-
-      .show_more {
-        width: 8vw;
-        height: 5vh;
-        font-family: "roboto-bold";
-        font-size: 15px;
-        border: 0;
-        border-radius: 19px;
-        background-color: black;
-        color: white;
-        margin: 1em;
-
-        &:hover {
-          cursor: pointer;
         }
       }
     }
