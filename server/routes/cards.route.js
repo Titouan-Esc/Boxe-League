@@ -7,7 +7,7 @@ const pipeline = promisify(require("stream").pipeline);
 
 router.get('/', async (req,res) => {
     try {
-        const cards = await Cards.find({}).populate('_user').exec(function(error, ));
+        const cards = await Cards.find();
         res.json(cards);
     } catch (error) {
         console.warn(error)
@@ -44,13 +44,14 @@ router.get('/:id', async (req,res) => {
 
 
 
-
+// ? Utiliser multer avec la const upload
 const upload = multer();
 
-// ! Upload de l'image 
+// ! Upload de l'image avec la fonction .single()
 router.post('/upload', upload.single('file'), async (req, res) => {
     try {
         
+        // ? Condition pour le format des images
         if(
             req.file.detectedMimeType != 'image/jpg' &&
             req.file.detectedMimeType != 'image/png' &&
@@ -58,6 +59,7 @@ router.post('/upload', upload.single('file'), async (req, res) => {
         )
         throw Error("Image invalide");
 
+        // ? Condition pour la taille de l'image
         if(req.file.size > 5000000)
         throw Error('Image trop grande');
 
@@ -70,6 +72,7 @@ router.post('/upload', upload.single('file'), async (req, res) => {
     console.log(req.file);
     await pipeline(
         req.file.stream,
+        // ? Lien de l'image qu'on envoie vers le dossier upload côté client pour le stockage de l'image
         fs.createWriteStream(`${__dirname}/../../client/public/upload/${fileName}`)
     );
 
@@ -77,6 +80,8 @@ router.post('/upload', upload.single('file'), async (req, res) => {
 
     try {
         console.log("ok2");
+
+        // ? Création d'une instance de Cards avec tout les données nécessaire 
         const card = new Cards({
             name : req.body.name,
             image : `./upload/${req.file.originalName}`,
