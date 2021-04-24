@@ -39,8 +39,7 @@ const Combats = () => {
                 <div className="top_text">
                     <h1>Boxe League</h1>
                     <p>
-                        Quoi de mieux que de participer un tournoi avec
-                        les personnages que vous venais de créer !
+                    Quoi de mieux que de participer à un tournoi avec les personnages que vous venais de créer !
                     </p>
                 </div>
             </div>

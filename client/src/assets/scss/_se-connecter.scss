@@ -32,7 +32,7 @@
       .form {
         width: 100%;
         height: 14vh;
-        @include flex-box(column, space-between, center);
+        @include flex-box(column, space-between, flex-start);
         margin-top: 50px;
 
         .input {

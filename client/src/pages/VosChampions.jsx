@@ -41,9 +41,7 @@ const VosChampions = () => {
                 <div className="top_text">
                     <h1>Vos champions</h1>
                     <p>
-                        Créer vos champions que vous désirez tant !
-                        Et faite les combattre dans des tournois ou seul leurs
-                        statistique compterons !
+                        Créer vos champions que vous désirez tant ! Et faite les combattre dans des tournois ou seules leurs statistiques compterons !
                     </p>
                 </div>
             </div>
