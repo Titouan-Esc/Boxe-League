@@ -20,7 +20,7 @@ router.get('/', async (req,res) => {
 
 router.get('/:id', async (req,res) => {
     try {
-        const card = await Cards.findOne({ name : req.body.name });
+        const card = await Cards.findOne({ _id : req.params.id });
         res.json(card);
     } catch (error) {
         console.warn(error)

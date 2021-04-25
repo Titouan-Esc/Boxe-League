@@ -3,13 +3,18 @@ import axios from 'axios';
 import { Redirect, useParams } from 'react-router-dom';
 
 const Update = () => {
+    
+    const [submit, setSubmit] = useState(false);
+    const [card, setCard] = useState({
+        name : '',
+        atk : '',
+        def : '',
+        description : ''
+    });
+    const [redirect , setRedirect] = useState(false);
+    
     let { id } = useParams();
     console.log(id);
-
-    const [submit, setSubmit] = useState(false);
-    const [card, setCard] = useState([]);
-    const [redirect , setRedirect] = useState(false);
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -32,7 +37,7 @@ const Update = () => {
 
     async function fetchCards() {
         try {
-            const result = await axios.get(`http://localhost:8000/api/cards/${id}`);
+            const result = await axios.get(`http://localhost:8000/api/cards/${id}`, card);
             console.log(result.data);
             setCard(result.data);
         } catch (error) {
@@ -41,8 +46,8 @@ const Update = () => {
     }
 
     useEffect(() => {
-        fetchCards()
-    }, [])
+        fetchCards();
+    }, [submit]);
 
     const handleChange = (e) => {
         setCard({...card, [e.target.name]: e.target.value});
@@ -58,22 +63,22 @@ const Update = () => {
                     <div className="form_gauche">
                         <div className="creation_ligne">
                             <label htmlFor="name">Nom :</label>
-                            <input type="text" name='name' value={card} onChange={handleChange}/>
+                            <input type="text" name='name' value={card.name} onChange={handleChange}/>
                         </div>
 
                         <div className="creation_ligne">
                             <label htmlFor="atk">ATK :</label>
-                            <input type="number" name="atk" min="0" max="999" value={card} onChange={handleChange}/>
+                            <input type="number" name="atk" min="0" max="999" value={card.atk} onChange={handleChange}/>
                         </div>
 
                         <div className="creation_ligne">
                             <label htmlFor="def">DEF :</label>
-                            <input type="number" name="def" min="0" max="999" value={card} onChange={handleChange}/>
+                            <input type="number" name="def" min="0" max="999" value={card.def} onChange={handleChange}/>
                         </div>
 
                         <div className="creation_ligne">
                             <label htmlFor="description">Descirption :</label>
-                            <textarea name="description" cols="30" rows="10" value={card} onChange={handleChange}></textarea>
+                            <textarea name="description" cols="30" rows="10" value={card.description} onChange={handleChange}></textarea>
                         </div>
                     </div>
                     <div className="form_droite">
