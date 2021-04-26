@@ -18,6 +18,19 @@ router.get('/', async (req,res) => {
     }
 })
 
+// ? Requête pour l'afficher d'une seule carte avec l'id de celle-là
+router.get('/:id', async (req,res) => {
+    try {
+        const mma = await Mma.findOne({ _id : req.params.id});
+        res.json(mma);
+    } catch (error) {
+        console.warn(error)
+        res.send({
+            message : error.message
+        });
+    }
+})
+
 // ? Utiliser multer pour l'upload de mon image
 const upload = multer();
 

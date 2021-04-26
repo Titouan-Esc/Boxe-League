@@ -47,7 +47,7 @@ const MmaCard = ({ mma, addCount }) => {
               }
 
           }).map((c) => {
-              const { id, name, image, totalVic, totalDef, koVic, koDef, pays, naissance, taille, categorie } = c;
+              const { _id, name, image, totalVic, totalDef, koVic, koDef, pays, naissance, taille, categorie } = c;
 
               let mmaDelete;
 
@@ -61,12 +61,12 @@ const MmaCard = ({ mma, addCount }) => {
 
                 if(admin) {
                     modifyMma = (
-                        <Link to='/update-mma' className='btn-update'>Modifier</Link>
+                        <Link to={`/update-mma/${_id}`} className='btn-update'>Modifier</Link>
                     )
                 }
                 
               return(
-                <div className="mma_card" key={id}>
+                <div className="mma_card" key={_id}>
                         <h3>{name}</h3>
                         <img src={image} alt="Image du champion"/>
                         <div className="def_vic">
