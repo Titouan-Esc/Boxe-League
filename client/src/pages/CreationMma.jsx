@@ -47,7 +47,7 @@ const CreationMma = () => {
 
         console.log({mma, formData});
 
-        // setRedirect(true);
+        setRedirect(true);
     }
 
     const handleChange = (e) => {

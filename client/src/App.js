@@ -17,6 +17,7 @@ import CreationMma from './pages/CreationMma';
 
 function App() {
 
+  // ? Inisialiser le State à null
   const [user, setUser] = useState(null);
   const [admin, setAdmin] = useState(null);
 
@@ -40,6 +41,10 @@ function App() {
         }
       }
     )
+    ()
+  },[]);
+
+  useEffect(() => {
     (
       async () => {
         const response = await fetch('http://localhost:8000/api/admin', {
@@ -53,9 +58,8 @@ function App() {
           setAdmin(content);
         }
       }
-    )
+    )()
   },[]);
-
 
 
   return (
