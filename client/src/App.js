@@ -13,6 +13,7 @@ import AreneCombat from './pages/AreneCombat';
 import Update from './pages/Update';
 import Admin from './pages/Admin';
 import AdminRegister from './pages/AdminRegister';
+import CreationMma from './pages/CreationMma';
 
 function App() {
 
@@ -73,6 +74,7 @@ function App() {
               <Route path='/update/:id' component={Update}/>
               <Route path='/bl-admin' component={Admin}/>
               <Route path='/admin-register' component={AdminRegister}/>
+              <Route path='/create-mma' component={CreationMma}/>
             </Switch>
           </UserContext.Provider>
           </AdminContext.Provider>

@@ -60,7 +60,7 @@ router.post('/upload', upload.single('file'), async (req,res) => {
             pays : req.body.pays,
             naissance : req.body.naissance,
             taille : req.body.taille,
-            categorie : req.body.categories,
+            categorie : req.body.categorie,
             totalVic : req.body.totalVic,
             koVic : req.body.koVic,
             totalDef : req.body.totalDef,
@@ -68,7 +68,7 @@ router.post('/upload', upload.single('file'), async (req,res) => {
         });
         await mma.save();
     } catch (error) {
-        return req.status(500).send({ message : error });
+        return res.status(500).send({ message : error });
     }
 });
 

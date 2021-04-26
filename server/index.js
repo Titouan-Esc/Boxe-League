@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const userRoutes = require('./routes/user.route');
 const cardsRoutes = require('./routes/cards.route');
 const adminRoutes = require('./routes/admin.route');
-const mmaRoutes = require('/routes/mma.routes');
+const mmaRoutes = require('./routes/mma.routes');
 
 
 require('dotenv/config');

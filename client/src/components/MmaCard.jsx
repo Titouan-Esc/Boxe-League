@@ -1,31 +1,73 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { AdminContext } from '../Admin.Context';
+import axios from 'axios';
+import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 
 
-const MmaCard = ({ data }) => {
+const MmaCard = ({ mma, addCount }) => {
+
+    const {admin, setAdmin} = useContext(AdminContext);
 
     const [search, setSearch] = useState('');
+    const [del, setDel] = useState('');
 
+    // ? Fonction asynchrone qui permet de supprimer une carte
+    async function deleteMma(id) {
+        try {
+            const res = await axios.delete(`http://localhost:8000/api/mma/${id}`);
+            console.log(res.data);
+            newOp();
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
+    const newOp = () => {
+        addCount();
+    }
+
+    if(del) {
+        return <Redirect to='/'/>
+    }
+    
     return (
         <div className='champions'>
             <form>
                 <input type="text" placeholder='Cherchez...' onChange={(e) => setSearch(e.target.value)}/>
             </form>
-          {data.filter((val) => {
+          {mma.filter((val) => {
 
-              const { nom } = val;
+              const { name } = val;
 
               if(search === '') {
                   return val;
-              }else if(nom.toLowerCase().includes(search.toLocaleLowerCase())) {
+              }else if(name.toLowerCase().includes(search.toLocaleLowerCase())) {
                 return val;
               }
 
           }).map((c) => {
-              const { id, nom, image, totalVic, totalDef, koVic, koDef, pays, naissance, taille, categorie } = c;
+              const { id, name, image, totalVic, totalDef, koVic, koDef, pays, naissance, taille, categorie } = c;
+
+              let mmaDelete;
+
+                if(admin) {
+                    mmaDelete = (
+                        <button className='btn-mma-delete' onClick={() => deleteMma(c._id)}>Supprimer</button>
+                    )
+                }
+
+                let modifyMma;
+
+                if(admin) {
+                    modifyMma = (
+                        <Link to='/update-mma' className='btn-update'>Modifier</Link>
+                    )
+                }
+                
               return(
                 <div className="mma_card" key={id}>
-                        <h3>{nom}</h3>
+                        <h3>{name}</h3>
                         <img src={image} alt="Image du champion"/>
                         <div className="def_vic">
                             <div className="def">
@@ -41,6 +83,8 @@ const MmaCard = ({ data }) => {
                             <p>{naissance}</p>
                             <p>{taille}</p>
                             <p>{categorie}</p>
+                        {modifyMma}
+                        {mmaDelete}
                 </div>
               )
           })}  

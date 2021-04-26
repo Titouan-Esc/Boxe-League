@@ -2,20 +2,24 @@ import NavBar from "../components/NavBar";
 import Footer from '../components/Footer';
 import { UserContext } from '../User.Context';
 import { AdminContext } from '../Admin.Context';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import mma from '../Data';
 import MmaCard from "../components/MmaCard";
+import axios from "axios";
 
 
 
 const HomePage = () => {
 
+    //  ? Inisialisation des stats de nos contexte
     const {user, setUser} = useContext(UserContext);
     const {admin, setAdmin} = useContext(AdminContext);
 
-    const [data, setData] = useState(mma);
+    // ? Inisialisation du stats de notre data
+    const [mma, setMma] = useState([]);
+    const [opCount, setOpCount] = useState(0);
 
+    // ? Fonction asynchrone pour le logout de l'utilisateur
     const logout = async () => {
         await fetch('http://localhost:8000/api/user/logout' , {
             method : 'POST',
@@ -26,6 +30,7 @@ const HomePage = () => {
         setUser(null);
     }
 
+    // ? Fonction asynchrone pour le logout de l'admin
     const adminLogout = async () => {
         await fetch('http://localhost:8000/api/admin/logout', {
             method : 'POST',
@@ -36,7 +41,27 @@ const HomePage = () => {
         setAdmin(null);
     }
 
+    // ? Fonction asynchrone pour renvoyer les données des champions de mma
+    async function fetchMma() {
+        try {
+            const res = await axios.get('http://localhost:8000/api/mma');
+            console.log(res.data);
+            setMma(res.data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
+    const addCount = () => {
+        setOpCount(opCount+1);
+    }
+
+    // ? Utilisation d'un useEffect pour que notre fonction puisse se lancer à chaque effet
+    useEffect(() => {
+        fetchMma();
+    }, [opCount])
+
+    // ? Condition de l'user pour renvoyer le bouton en fonction de si il est connecté ou non
     let linkUser;
 
     if(!user) {
@@ -49,11 +74,21 @@ const HomePage = () => {
         )
     }
 
+    // ? Condition pour renvoyer le bouton logout si l'administrateur est connecté
     let linkAdmin;
 
     if(admin) {
         linkAdmin = (
             <button className='logout' onClick={adminLogout}>Se déconnecter</button>
+        )
+    }
+
+    // ? Condition que si l'admin est connecté alors envoyer un bouton qui puisse créer de nouveaux champion
+    let buttonAdmin;
+
+    if(admin) {
+        buttonAdmin = (
+            <Link to='/create-mma'><button className='create-mma'>Création</button></Link>
         )
     }
 
@@ -74,7 +109,8 @@ const HomePage = () => {
             <div className="bandeau">
                 <h2>Champions</h2>
             </div>
-                <MmaCard data={data}/>
+                {buttonAdmin}
+                <MmaCard mma={mma} addCount={addCount}/>
             <Footer/>
         </main>
     )

@@ -1,8 +1,11 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
+
 const Card = ({ cards , addCount}) => {
+
     const [del, setDel] = useState('');
+
         // ? Fonction asynchrone pour la suppression d'une carte
         async function deleteCard(id) {
             try {
@@ -17,9 +20,11 @@ const Card = ({ cards , addCount}) => {
         const newOp = () => {
             addCount();
         }
+
         if(del) {
             return <Redirect to='/champions'/>
         }
+        
     return (
         <>
           {cards.map((c) => {

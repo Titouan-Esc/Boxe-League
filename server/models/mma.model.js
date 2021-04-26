@@ -26,7 +26,7 @@ const mmaSchema = mongoose.Schema({
         required : true
     },
     totalVic : {
-        type : Number,
+        type : String,
         required : true
     },
     koVic : {
@@ -34,7 +34,7 @@ const mmaSchema = mongoose.Schema({
         required : true
     },
     totalDef : {
-        type : Number,
+        type : String,
         required : true
     },
     koDef : {
