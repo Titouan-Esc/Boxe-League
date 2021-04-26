@@ -65,7 +65,7 @@ router.post('/login', async (req,res) => {
 router.get('/', async (req,res) => {
     try {
         // * Récupérer le cookie dans l'ordinateur
-        const cookie = req.cookie['admin'];
+        const cookie = req.cookies['admin'];
 
         // * Vérifier le cookie avec la méthode de jwt
         const claims = await jwt.verify(cookie, 'secret');

@@ -5,6 +5,7 @@ import { Redirect, useParams } from 'react-router-dom';
 const Update = () => {
     
     const [submit, setSubmit] = useState(false);
+    // ? Initialisation d'un state qui prend en compte les composants de ma carte
     const [card, setCard] = useState({
         name : '',
         atk : '',
@@ -13,9 +14,11 @@ const Update = () => {
     });
     const [redirect , setRedirect] = useState(false);
     
+    // ? Utilisation de useParams pour récupérer l'id dans mon url
     let { id } = useParams();
     console.log(id);
 
+    // ? Fonction pour update une carte
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -35,6 +38,7 @@ const Update = () => {
         setRedirect(true)
     }
 
+    // ? Fonction asynchrone pour la récupération des éléments de ma carte pour les afficher dans mon formulaire 
     async function fetchCards() {
         try {
             const result = await axios.get(`http://localhost:8000/api/cards/${id}`, card);
@@ -45,14 +49,17 @@ const Update = () => {
         }
     }
 
+    // ? useEffect pour le lancement de ma fonction asynchrone
     useEffect(() => {
         fetchCards();
     }, [submit]);
 
+    // ? Fonction qui permet de faire un e.taget.value
     const handleChange = (e) => {
         setCard({...card, [e.target.name]: e.target.value});
     }
 
+    // ? Condition pour ma redirection
     if(redirect){
         return <Redirect to='/champions'/>
     }

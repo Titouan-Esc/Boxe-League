@@ -38,7 +38,8 @@ function App() {
           setUser(content);
         }
       }
-    )(
+    )
+    (
       async () => {
         const response = await fetch('http://localhost:8000/api/admin', {
           headers : {'Content-Type' : 'application/json'},
@@ -59,7 +60,7 @@ function App() {
   return (
     <>
       <Router>
-        <AdminContext.Provider value={adminValue}>
+          <AdminContext.Provider value={adminValue}>
           <UserContext.Provider value={value}>
             <Switch>
               <Route path='/' exact component={HomePage}/>
@@ -74,7 +75,7 @@ function App() {
               <Route path='/admin-register' component={AdminRegister}/>
             </Switch>
           </UserContext.Provider>
-        </AdminContext.Provider>
+          </AdminContext.Provider>
       </Router>
     </>
   );

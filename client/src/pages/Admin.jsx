@@ -31,6 +31,7 @@ const Admin = () => {
             credentials : 'include'
         });
 
+
         const content = await response.json();
 
         if(content._id){
