@@ -83,8 +83,10 @@ const MmaCard = ({ mma, addCount }) => {
                             <p>{naissance}</p>
                             <p>{taille}</p>
                             <p>{categorie}</p>
-                        {modifyMma}
-                        {mmaDelete}
+                        <div className="supr_upd">
+                            {modifyMma}
+                            {mmaDelete}
+                        </div>
                 </div>
               )
           })}  

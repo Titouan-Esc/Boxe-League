@@ -89,6 +89,7 @@ main {
 
     .mma_card {
       width: 20vw;
+      height: 70vh;
       @include flex-box(column, space-between, center);
       background-color: white;
       border-radius: 28px;
@@ -96,6 +97,7 @@ main {
       margin: 20px;
 
       img {
+        width: 10vw;
         margin: 1em;
       }
 
