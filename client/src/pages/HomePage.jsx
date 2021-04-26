@@ -77,9 +77,13 @@ const HomePage = () => {
     // ? Condition pour renvoyer le bouton logout si l'administrateur est connecté
     let linkAdmin;
 
-    if(admin) {
+    if(admin && !user) {
         linkAdmin = (
             <button className='logout' onClick={adminLogout}>Se déconnecter</button>
+        )
+
+        linkUser = (
+            <Link to='/connect'><button className='btn-login' style={{ display : "none"}}>Se connecter</button></Link>
         )
     }
 
