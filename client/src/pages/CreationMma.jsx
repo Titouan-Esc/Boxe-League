@@ -67,39 +67,43 @@ const CreationMma = () => {
             <Link to='/'><img src="./logo/arrow.png" alt="Retour en arrière" className="return"/></Link>
             <h1>Création Mma</h1>
                 <form className='form_mma' onSubmit={handleSubmit} encType='multipart/form-data'>
-                    <div className="contenen_mma">
+                    <div className="conteneur_top">
+                        <div className="contenen_mma">
 
-                        <label htmlFor="name">Nom :</label>
-                        <input type="text" name='name' value={mma.name} onChange={handleChange}/>
+                            <label htmlFor="name">Nom :</label>
+                            <input type="text" name='name' value={mma.name} onChange={handleChange}/>
 
-                        <label htmlFor="file">Image :</label>
-                        <input type="file" name='file'accept='.png, .jpg, .jpeg' onChange={handleImage}/>
+                            <label htmlFor="file">Image :</label>
+                            <input type="file" name='file'accept='.png, .jpg, .jpeg' onChange={handleImage}/>
 
-                        <label htmlFor="pays">Pays :</label>
-                        <input type="text" name='pays' value={mma.pays} onChange={handleChange}/>
+                            <label htmlFor="pays">Pays :</label>
+                            <input type="text" name='pays' value={mma.pays} onChange={handleChange}/>
 
-                        <label htmlFor="naissance">Date de naissance :</label>
-                        <input type="text" name='naissance' value={mma.naissance} onChange={handleChange}/>
+                            <label htmlFor="naissance">Date de naissance :</label>
+                            <input type="text" name='naissance' value={mma.naissance} onChange={handleChange}/>
 
-                        <label htmlFor="taille">Taille :</label>
-                        <input type="text" name='taille' value={mma.taille} onChange={handleChange}/>
-                    </div>
-                    <div className="contenen_mma">
+                            <label htmlFor="taille">Taille :</label>
+                            <input type="text" name='taille' value={mma.taille} onChange={handleChange}/>
 
-                        <label htmlFor="categorie">Catégorie :</label>
-                        <input type="text" name='categorie' value={mma.categorie} onChange={handleChange}/>
+                        </div>
+                        <div className="contenen_mma">
 
-                        <label htmlFor="totalVic">Total de Victoires :</label>
-                        <input type="text" name='totalVic' value={mma.totalVic} onChange={handleChange}/>
+                            <label htmlFor="categorie">Catégorie :</label>
+                            <input type="text" name='categorie' value={mma.categorie} onChange={handleChange}/>
 
-                        <label htmlFor="koVic">Victoires par KO :</label>
-                        <input type="text" name='koVic' value={mma.koVic} onChange={handleChange}/>
+                            <label htmlFor="totalVic">Total de Victoires :</label>
+                            <input type="text" name='totalVic' value={mma.totalVic} onChange={handleChange}/>
 
-                        <label htmlFor="totalDef">Total de défaites :</label>
-                        <input type="text" name='totalDef' value={mma.totalDef} onChange={handleChange}/>
+                            <label htmlFor="koVic">Victoires par KO :</label>
+                            <input type="text" name='koVic' value={mma.koVic} onChange={handleChange}/>
 
-                        <label htmlFor="koDef">Défaites par KO</label>
-                        <input type="text" name='koDef' value={mma.koDef} onChange={handleChange}/>
+                            <label htmlFor="totalDef">Total de défaites :</label>
+                            <input type="text" name='totalDef' value={mma.totalDef} onChange={handleChange}/>
+
+                            <label htmlFor="koDef">Défaites par KO</label>
+                            <input type="text" name='koDef' value={mma.koDef} onChange={handleChange}/>
+
+                        </div>
                     </div>
 
                     <button type='subrmit'>Créer</button>

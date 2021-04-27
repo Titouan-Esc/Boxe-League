@@ -21,15 +21,21 @@
     width: 50vw;
     height: 50vh;
     position: relative;
-    @include flex-box(row, space-between, center);
+    @include flex-box(column, space-between, center);
     background-color: white;
     border-radius: 8px;
     padding: 30px;
 
-    .contenen_mma {
-      width: 50%;
-      height: 90%;
-      @include flex-box(column, space-around, center);
+    .conteneur_top {
+      width: 100%;
+      height: 100%;
+      @include flex-box(row, space-between, flex-start);
+
+      .contenen_mma {
+        width: 50%;
+        height: 90%;
+        @include flex-box(column, space-around, center);
+      }
     }
 
     button {
