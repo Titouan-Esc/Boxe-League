@@ -1,2 +1,56 @@
 .admin_connect {
+  height: 100vh;
+  position: relative;
+  @include flex-box(row, center, center);
+  background-color: $color_one;
+
+  .return {
+    width: 3vw;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+  }
+
+  .conteneur {
+    width: 50%;
+    height: 50%;
+    @include flex-box(column, space-between, center);
+
+    img {
+      width: 7vw;
+      margin-bottom: 1em;
+    }
+
+    .form_connect {
+      width: 30vw;
+      height: 70vh;
+      @include flex-box(column, space-around, center);
+      background-color: white;
+      border-radius: 8px;
+
+      .form {
+        .input {
+          margin: 1em;
+        }
+      }
+
+      .liens {
+        height: 9vh;
+        @include flex-box(column, space-between, center);
+
+        button {
+          width: 9vw;
+          height: 5vh;
+          background-color: black;
+          border: 0;
+          border-radius: 5px;
+          color: white;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
 }

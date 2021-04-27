@@ -51,7 +51,7 @@ const Admin = () => {
     
     return (
         <main className='admin_connect'>
-            <Link to='/'><img src="./logo/arrow.png" alt="Retour en arrière"className="return"/></Link>
+            <Link to='/'><img src="./logo/arrow.png" alt="Retour en arrière" className="return"/></Link>
             <div className="conteneur">
                 <img src="./logo/logo.png" alt="Logo du site"/>
 

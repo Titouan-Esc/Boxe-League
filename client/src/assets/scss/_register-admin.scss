@@ -1,0 +1,51 @@
+.admin-register {
+  height: 100vh;
+  @include flex-box(column, center, center);
+  background-color: $color_one;
+
+  img {
+    width: 8vw;
+  }
+
+  .conteneur_register {
+    .form_register {
+      width: 40vw;
+      height: 40vh;
+      @include flex-box(column, space-around, flex-start);
+      background-color: white;
+      border-radius: 8px;
+      padding: 2em;
+
+      .input_register {
+        label {
+          font-family: "roboto-regular";
+          font-size: 1em;
+        }
+
+        input {
+          height: 3vh;
+          border: 0;
+          background-color: gainsboro;
+          margin-left: 1em;
+        }
+      }
+
+      .register_btn {
+        button {
+          width: 8vw;
+          height: 5vh;
+          font-family: "roboto-bold";
+          font-size: 1em;
+          background-color: $color_one;
+          border: 0;
+          border-radius: 5px;
+          color: white;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

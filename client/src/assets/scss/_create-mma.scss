@@ -1,0 +1,50 @@
+.creation-mma {
+  height: 100vh;
+  @include flex-box(column, center, center);
+  background-color: $color_one;
+
+  .return {
+    width: 3vw;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+  }
+
+  h1 {
+    font-family: "utopia";
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  .form_mma {
+    width: 50vw;
+    height: 50vh;
+    position: relative;
+    @include flex-box(row, space-between, center);
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+
+    .contenen_mma {
+      width: 50%;
+      height: 90%;
+      @include flex-box(column, space-around, center);
+    }
+
+    button {
+      width: 7vw;
+      height: 5vh;
+      font-family: "roboto-bold";
+      font-size: 1em;
+      border: 0;
+      border-radius: 8px;
+      background-color: $color_one;
+      color: white;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

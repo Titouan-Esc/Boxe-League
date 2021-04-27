@@ -64,11 +64,10 @@ const CreationMma = () => {
     return (
         <main className='creation-mma'>
             <div className="creation_mma_top">
-            <Link to='/'><img src="./logo/arrow.png" alt="Retour en arrière"className="return"/></Link>
+            <Link to='/'><img src="./logo/arrow.png" alt="Retour en arrière" className="return"/></Link>
             <h1>Création Mma</h1>
-            <div className="conteneur_form_mma">
                 <form className='form_mma' onSubmit={handleSubmit} encType='multipart/form-data'>
-                    <div className="contenen_mma_gauche">
+                    <div className="contenen_mma">
 
                         <label htmlFor="name">Nom :</label>
                         <input type="text" name='name' value={mma.name} onChange={handleChange}/>
@@ -85,7 +84,7 @@ const CreationMma = () => {
                         <label htmlFor="taille">Taille :</label>
                         <input type="text" name='taille' value={mma.taille} onChange={handleChange}/>
                     </div>
-                    <div className="contenen_mma_droite">
+                    <div className="contenen_mma">
 
                         <label htmlFor="categorie">Catégorie :</label>
                         <input type="text" name='categorie' value={mma.categorie} onChange={handleChange}/>
@@ -105,7 +104,6 @@ const CreationMma = () => {
 
                     <button type='subrmit'>Créer</button>
                 </form>
-            </div>
             </div>
         </main>
     )

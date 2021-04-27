@@ -1,0 +1,47 @@
+.update_mma {
+  height: 100vh;
+  @include flex-box(row, center, center);
+  background-color: $color_one;
+
+  .form_update_mma {
+    width: 50vw;
+    height: 50vh;
+    @include flex-box(column, space-between, center);
+    background-color: white;
+    border-radius: 8px;
+    padding: 25px;
+
+    .top_form {
+      width: 100%;
+      @include flex-box(row, space-between, flex-start);
+
+      .contenen_update_mma {
+        width: 50%;
+        @include flex-box(column, space-between, center);
+
+        label {
+          font-family: "roboto-regular";
+        }
+
+        input {
+          margin-bottom: 1em;
+        }
+      }
+    }
+
+    button {
+      width: 9vw;
+      height: 5vh;
+      font-family: "roboto-bold";
+      font-size: 15px;
+      border: 0;
+      border-radius: 22px;
+      background-color: $color_one;
+      color: white;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

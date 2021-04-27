@@ -71,36 +71,40 @@ const UpdateMma = () => {
     return (
         <main className='update_mma'>
             <form className='form_update_mma' onSubmit={handleSubmit}>
-                <div className="contenen_update_mma">
+                <div className="top_form">
+                    <div className="contenen_update_mma">
 
-                    <label htmlFor="name">Nom :</label>
-                    <input type="text" name='name' value={mma.name} onChange={handleChange}/>
+                        <label htmlFor="name">Nom :</label>
+                        <input type="text" name='name' value={mma.name} onChange={handleChange}/>
 
-                    <label htmlFor="pays">Pays :</label>
-                    <input type="text" name='pays' value={mma.pays} onChange={handleChange}/>
+                        <label htmlFor="pays">Pays :</label>
+                        <input type="text" name='pays' value={mma.pays} onChange={handleChange}/>
 
-                    <label htmlFor="naissance">Date de naissance :</label>
-                    <input type="text" name='naissance' value={mma.naissance} onChange={handleChange}/>
+                        <label htmlFor="naissance">Date de naissance :</label>
+                        <input type="text" name='naissance' value={mma.naissance} onChange={handleChange}/>
 
-                    <label htmlFor="taille">Taille :</label>
-                    <input type="text" name='taille' value={mma.taille} onChange={handleChange}/>
+                        <label htmlFor="taille">Taille :</label>
+                        <input type="text" name='taille' value={mma.taille} onChange={handleChange}/>
 
-                    <label htmlFor="categorie">Catégorie :</label>
-                    <input type="text" name='categorie' value={mma.categorie} onChange={handleChange}/>
-                </div>
-                <div className="contenen_update_mma">
+                        <label htmlFor="categorie">Catégorie :</label>
+                        <input type="text" name='categorie' value={mma.categorie} onChange={handleChange}/>
 
-                    <label htmlFor="totalVic">Total de Victoires :</label>
-                    <input type="text" name='totalVic' value={mma.totalVic} onChange={handleChange}/>
+                    </div>
+                    <div className="contenen_update_mma">
 
-                    <label htmlFor="koVic">Victoires par KO :</label>
-                    <input type="text" name='koVic' value={mma.koVic} onChange={handleChange}/>
+                        <label htmlFor="totalVic">Total de Victoires :</label>
+                        <input type="text" name='totalVic' value={mma.totalVic} onChange={handleChange}/>
 
-                    <label htmlFor="totalDef">Total de défaites :</label>
-                    <input type="text" name='totalDef' value={mma.totalDef} onChange={handleChange}/>
+                        <label htmlFor="koVic">Victoires par KO :</label>
+                        <input type="text" name='koVic' value={mma.koVic} onChange={handleChange}/>
 
-                    <label htmlFor="koDef">Défaites par KO :</label>
-                    <input type="text" name='koDef' value={mma.koDef} onChange={handleChange}/>
+                        <label htmlFor="totalDef">Total de défaites :</label>
+                        <input type="text" name='totalDef' value={mma.totalDef} onChange={handleChange}/>
+
+                        <label htmlFor="koDef">Défaites par KO :</label>
+                        <input type="text" name='koDef' value={mma.koDef} onChange={handleChange}/>
+
+                    </div>
                 </div>
                 <button type='submit'>Modifier</button>
             </form>

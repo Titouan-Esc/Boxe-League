@@ -49,19 +49,15 @@ const MmaCard = ({ mma, addCount }) => {
           }).map((c) => {
               const { _id, name, image, totalVic, totalDef, koVic, koDef, pays, naissance, taille, categorie } = c;
 
+            //   ? Condition pour l'affichage des button de suppressions et de modification lorsque l'admin est connecté ou non
               let mmaDelete;
 
                 if(admin) {
                     mmaDelete = (
-                        <button className='btn-mma-delete' onClick={() => deleteMma(c._id)}>Supprimer</button>
-                    )
-                }
-
-                let modifyMma;
-
-                if(admin) {
-                    modifyMma = (
-                        <Link to={`/update-mma/${_id}`} className='btn-update'>Modifier</Link>
+                        <div className="params-mma">
+                            <Link to={`/update-mma/${_id}`} className='btn-update'>Modifier</Link>
+                            <button className='btn-mma-delete' onClick={() => deleteMma(c._id)}>Supprimer</button>
+                        </div>
                     )
                 }
                 
@@ -83,10 +79,7 @@ const MmaCard = ({ mma, addCount }) => {
                             <p>{naissance}</p>
                             <p>{taille}</p>
                             <p>{categorie}</p>
-                        <div className="supr_upd">
-                            {modifyMma}
                             {mmaDelete}
-                        </div>
                 </div>
               )
           })}  

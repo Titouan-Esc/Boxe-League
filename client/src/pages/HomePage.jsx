@@ -92,7 +92,27 @@ const HomePage = () => {
 
     if(admin) {
         buttonAdmin = (
-            <Link to='/create-mma'><button className='create-mma'>Création</button></Link>
+            <div className="btn-create-mma">
+                <Link to='/create-mma'><button className='create-mma'>Création</button></Link>
+            </div>
+        )
+    }
+
+    // ? Phrase en fonction de l'user et de l'admin
+    let phraseUser;
+    let phraseAdmin;
+
+    if(!user && !admin) {
+        phraseUser = (
+            <h3>Pour plus de combats veuillez vous connecter</h3>
+        )
+    }else if(user && !admin) {
+        phraseUser = (
+            <h3 className='bienvenue'>Bienvenue à toi {user.username}</h3>
+        )
+    }else if(!user && admin) {
+        phraseAdmin = (
+            <h3>Bienvenue à toi Administrateur {admin.username}</h3>
         )
     }
 
@@ -105,7 +125,8 @@ const HomePage = () => {
                 La solution pour se renseigner sur vos combattants préférés tout en prenant part à la création de boxeurs et de les faire combattre entre eux
                 </p>
                 <div className="user">
-                    {user ? (<h3 className='bienvenue'>Bienvenue à toi {user.username}</h3>) : (<h3>Pour plus de combats veuillez vous connecter</h3>)}
+                    {phraseUser}
+                    {phraseAdmin}
                     {linkUser}
                     {linkAdmin}
                 </div>

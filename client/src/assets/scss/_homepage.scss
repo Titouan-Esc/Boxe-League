@@ -65,6 +65,26 @@ main {
     }
   }
 
+  .btn-create-mma {
+    height: 7vh;
+    @include flex-box(row, center, center);
+    background-color: $color_one;
+
+    .create-mma {
+      width: 15vw;
+      height: 5vh;
+      font-family: "utopia";
+      font-size: 20px;
+      color: $color_one;
+      border: 0;
+      border-radius: 22px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
   .champions {
     position: relative;
     display: flex;
@@ -149,6 +169,20 @@ main {
             color: $color_vic;
             padding-right: 1em;
           }
+        }
+      }
+
+      .params-mma {
+        width: 70%;
+        height: 8vh;
+        @include flex-box(column, space-around, center);
+        border: 2px solid black;
+        border-radius: 8px;
+        margin-top: 1em;
+
+        button {
+          background-color: gainsboro;
+          border: 0;
         }
       }
     }
