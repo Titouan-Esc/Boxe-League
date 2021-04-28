@@ -1,18 +1,23 @@
 import React, { useState, useEffect } from 'react'
-import { Link, Redirect, useHistory } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 const url = 'http://localhost:8000/api/cards';
 
 const Combats = () => {
 
-    const [cards, setCards] = useState([]);
+    const [cards, setCards] = useState([{
+        _id : '',
+        name : '',
+        image : '',
+        description : '',
+        atk : '',
+        def : ''
+    }]);
     const [combat, setCombat] = useState(false);
-    const [checked, setChecked] = useState('');
+    const [select, setSelect] = useState('');
 
-    let history = useHistory();
 
-    console.log(checked);
 
     async function fetchCards() {
         try {
@@ -25,11 +30,16 @@ const Combats = () => {
         
     }
 
-    const submit = (e) => {
-        e.preventDefault();
 
-        
+    const handleChange = (e) => {
+
+        setSelect(e.target.value);
+
     }
+
+
+    console.log(select);
+
 
     useEffect(() => {
         fetchCards();
@@ -60,36 +70,58 @@ const Combats = () => {
             </div>
 
             <div className="select_champions">
-                <form className='form-combat' onSubmit={submit}>
+                <form className='form-combat'>
                     <div className="form_top">
-                        <button className='btn_fight' type='submit'>combattez !</button>
+                        <Link to={`/arene/${cards._id}/${cards._id}`}><button className='btn_fight'>combattez !</button></Link>
                     </div>
                     <div className="form_bottom">
-                    {cards.map((c) => {
-                        const { _id, name, description, image, atk, def } = c;
-                        return(
-                            <div className="conteneur_carte" key={_id}>
-                                <form className='check_form'>
-                                    <div className="fond_carte">
-                                        <div className="carte">
-                                            <h2>{name}</h2>
-                                            <div className="carte_img">
-                                                <img src={image} alt="Image du champion"/>
-                                            </div>
-                                            <div className="carte_desc">
-                                                <p>{description}</p>
-                                            </div>
-                                            <div className="atk_def">
-                                                <p>ATK {atk}</p>
-                                                <p>DEF {def}</p>
+                        {cards.map((c) => {
+                            
+                            return(
+                                <div className="conteneur_carte" key={c._id}>
+                                        <div className="fond_carte">
+                                            <div className="carte">
+                                                <h2>{c.name}</h2>
+                                                <div className="carte_img">
+                                                    <img src={c.image} alt="Image du champion"/>
+                                                </div>
+                                                <div className="carte_desc">
+                                                    <p>{c.description}</p>
+                                                </div>
+                                                <div className="atk_def">
+                                                    <p>ATK {c.atk}</p>
+                                                    <p>DEF {c.def}</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <input type="checkbox" onChange={() => setChecked(c._id)}/>
-                                </form>
-                            </div>
-                        )
-                    })}  
+                                </div>
+                            )
+                        })}  
+                    </div>
+                    
+                    <div className="form_select">
+
+                        <select id='select' onChange={handleChange}>
+                            {cards.map((c) => {
+
+                                return(
+                                    <>
+                                        <option value={c}>{c.name}</option>
+                                    </>
+                                )
+                            })}
+                        </select>
+                        <h1>VS</h1>
+                        <select id='select' onChange={handleChange}>
+                            {cards.map((c) => {
+
+                                return(
+                                    <>
+                                        <option value={c}>{c.name}</option>
+                                    </>
+                                )
+                            })}
+                        </select>
                     </div>
                 </form>
             </div>

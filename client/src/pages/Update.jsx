@@ -54,7 +54,7 @@ const Update = () => {
         fetchCards();
     }, [submit]);
 
-    // ? Fonction qui permet de faire un e.taget.value
+    // ? Fonction qui permet de faire un e.target.value
     const handleChange = (e) => {
         setCard({...card, [e.target.name]: e.target.value});
     }

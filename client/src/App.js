@@ -75,7 +75,7 @@ function App() {
               <Route path='/champions' component={VosChampions}/>
               <Route path='/combats' component={Combats}/>
               <Route path='/creation' component={Creation}/>
-              <Route path='/arene' component={AreneCombat}/>
+              <Route path='/arene/:id/:id' component={AreneCombat}/>
               <Route path='/update/:id' component={Update}/>
               <Route path='/bl-admin' component={Admin}/>
               <Route path='/admin-register' component={AdminRegister}/>

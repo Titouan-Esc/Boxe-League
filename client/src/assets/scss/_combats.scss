@@ -56,23 +56,21 @@
       justify-content: space-around;
       align-items: center;
 
-      .form_top {
-        .btn_fight {
-          width: 15vw;
-          height: 5vh;
-          font-family: "utopia";
-          font-size: 1em;
-          text-transform: uppercase;
-          text-align: center;
-          border: 0;
-          border-radius: 37px;
-          color: black;
-          background-color: white;
-          margin-top: 2em;
+      .btn_fight {
+        width: 15vw;
+        height: 5vh;
+        font-family: "utopia";
+        font-size: 1em;
+        text-transform: uppercase;
+        text-align: center;
+        border: 0;
+        border-radius: 37px;
+        color: black;
+        background-color: white;
+        margin-top: 2em;
 
-          &:hover {
-            cursor: pointer;
-          }
+        &:hover {
+          cursor: pointer;
         }
       }
 
@@ -83,6 +81,17 @@
         flex-wrap: wrap;
         justify-content: space-around;
         align-items: center;
+      }
+
+      .form_select {
+        width: 100%;
+        @include flex-box(row, space-around, center);
+
+        #select {
+          width: 20vw;
+          height: 5vh;
+          margin: 50px;
+        }
       }
     }
   }
