@@ -46,27 +46,44 @@
       font-family: "roboto-bold";
       color: white;
     }
-
-    .btn_fight {
-      width: 15vw;
-      height: 5vh;
-      font-family: "utopia";
-      font-size: 1em;
-      text-transform: uppercase;
-      text-align: center;
-      border: 0;
-      border-radius: 37px;
-      color: black;
-      background-color: white;
-      margin-top: 2em;
-    }
   }
 
   .select_champions {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+    .form-combat {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+
+      .form_top {
+        .btn_fight {
+          width: 15vw;
+          height: 5vh;
+          font-family: "utopia";
+          font-size: 1em;
+          text-transform: uppercase;
+          text-align: center;
+          border: 0;
+          border-radius: 37px;
+          color: black;
+          background-color: white;
+          margin-top: 2em;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .form_bottom {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+      }
+    }
   }
 }
