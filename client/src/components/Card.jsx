@@ -28,7 +28,9 @@ const Card = ({ cards , addCount}) => {
     return (
         <>
           {cards.map((c) => {
+              
               const { _id, name, description, image, atk, def } = c;
+
               return(
                 <div className="conteneur_carte" key={_id}>
                     <div className="fond_carte">
