@@ -5,7 +5,8 @@ import axios from 'axios';
 
 const AreneCombat = () => {
 
-    const [champions, setChampions] = useState([]);
+    const [champions1, setChampions1] = useState([]);
+    const [champions2, setChampions2] = useState([]);
 
 
     let { id1, id2 } = useParams();
@@ -15,9 +16,8 @@ const AreneCombat = () => {
         try {
             const res = await axios.get(`http://localhost:8000/api/cards/${id1}`);
             const result = await axios.get(`http://localhost:8000/api/cards/${id2}`);
-            console.log(res.data);
-            console.log(result.data);
-            setChampions(result.data, res.data);
+            setChampions1(res.data);
+            setChampions2(result.data);
         } catch (error) {
             console.log(error);
         }
