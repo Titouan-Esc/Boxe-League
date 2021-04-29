@@ -58,7 +58,7 @@ const CreationMma = () => {
         setMma({...mma, image: e.target.files[0]});
     }
 
-    if(redirect) {
+    if(submit) {
         return <Redirect to='/'/>
     }
     return (
