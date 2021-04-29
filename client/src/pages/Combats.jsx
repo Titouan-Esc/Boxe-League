@@ -7,7 +7,6 @@ const url = 'http://localhost:8000/api/cards';
 const Combats = () => {
 
     const [cards, setCards] = useState([{
-        _id : '',
         name : '',
         image : '',
         description : '',
@@ -106,7 +105,7 @@ const Combats = () => {
 
                                 return(
                                     <>
-                                        <option value={c}>{c.name}</option>
+                                        <option value={c._id}>{c.name}</option>
                                     </>
                                 )
                             })}
@@ -117,7 +116,7 @@ const Combats = () => {
 
                                 return(
                                     <>
-                                        <option value={c}>{c.name}</option>
+                                        <option value={c._id}>{c.name}</option>
                                     </>
                                 )
                             })}
