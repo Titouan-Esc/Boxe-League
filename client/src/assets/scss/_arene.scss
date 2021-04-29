@@ -1,0 +1,70 @@
+.arene {
+  height: 100vh;
+  background-color: $color_one;
+  @include flex-box(row, space-around, center);
+
+  .fond_carte {
+    width: 27vw;
+    height: 80vh;
+    @include flex-box(column, center, center);
+    background-color: black;
+    border-radius: 8px;
+
+    .carte {
+      width: 95%;
+      height: 95%;
+      @include flex-box(column, space-between, center);
+      background-color: white;
+      padding: 20px;
+
+      .carte_img {
+        width: 95%;
+        @include flex-box(row, center, center);
+        border: 3px solid $color_one;
+        padding: 5px;
+
+        img {
+          width: 12vw;
+        }
+      }
+
+      .carte_desc {
+        width: 95%;
+        @include flex-box(row, center, center);
+        text-align: center;
+        border: 3px solid $color_one;
+        padding: 5px;
+      }
+
+      .atk_def {
+        width: 95%;
+        @include flex-box(row, space-around, center);
+        border: 3px solid $color_one;
+        padding: 5px;
+      }
+    }
+  }
+
+  .middle {
+    @include flex-box(column, space-between, center);
+
+    h1 {
+      margin-bottom: 2em;
+    }
+
+    button {
+      width: 15vw;
+      height: 5vh;
+      font-family: "utopia";
+      font-size: 1em;
+      text-align: center;
+      border: 0;
+      border-radius: 22px;
+      margin: 10px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -5,14 +5,14 @@ import axios from 'axios';
 
 const AreneCombat = () => {
 
-    let [champions1, setChampions1] = useState({
+    const [champions1, setChampions1] = useState({
         name : '',
         image : '',
         description : '',
         atk : '',
         def : ''
     });
-    let [champions2, setChampions2] = useState({
+    const [champions2, setChampions2] = useState({
         name : '',
         image : '',
         description : '',
@@ -24,11 +24,18 @@ const AreneCombat = () => {
     let { id1, id2 } = useParams();
 
 
-    async function fetchCards() {
+    async function fetchCards1() {
         try {
             const res = await axios.get(`http://localhost:8000/api/cards/${id1}`);
-            const result = await axios.get(`http://localhost:8000/api/cards/${id2}`);
             setChampions1(res.data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async function fetchCards2() {
+        try {
+            const result = await axios.get(`http://localhost:8000/api/cards/${id2}`);
             setChampions2(result.data);
         } catch (error) {
             console.log(error);
@@ -38,18 +45,20 @@ const AreneCombat = () => {
     console.log(champions1);
     console.log(champions2);
 
+
     useEffect(() => {
-        fetchCards();
+        fetchCards1();
+        fetchCards2();
     },[])
 
     return (
         <main className='arene'>
 
-                    <div className="fond_carte">
+                    <div className="fond_carte" key={champions1._id}>
                         <div className="carte">
                             <h2>{champions1.name}</h2>
                             <div className="carte_img">
-                                <img src={champions1.image} alt="Image du champion"/>
+                                <img src={`/${champions1.image}`} alt="champion"/>
                             </div>
                             <div className="carte_desc">
                                 <p>{champions1.description}</p>
@@ -61,11 +70,16 @@ const AreneCombat = () => {
                         </div>
                     </div>
 
-                    <div className="fond_carte">
+                    <div className="middle">
+                        <h1>VS</h1>
+                        <button>Combattez!</button>
+                    </div>
+
+                    <div className="fond_carte" key={champions2._id}>
                         <div className="carte">
                             <h2>{champions2.name}</h2>
                             <div className="carte_img">
-                                <img src={champions2.image} alt="Image du champion"/>
+                                <img src={`/${champions2.image}`} alt="champion"/>
                             </div>
                             <div className="carte_desc">
                                 <p>{champions2.description}</p>
