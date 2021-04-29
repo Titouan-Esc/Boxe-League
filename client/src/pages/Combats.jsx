@@ -14,7 +14,8 @@ const Combats = () => {
         def : ''
     }]);
     const [combat, setCombat] = useState(false);
-    const [select, setSelect] = useState('');
+    const [select1, setSelect1] = useState('');
+    const [select2, setSelect2] = useState('');
 
 
 
@@ -30,14 +31,23 @@ const Combats = () => {
     }
 
 
-    const handleChange = (e) => {
+    const handleChange1 = (e) => {
 
-        setSelect(e.target.value);
+        setSelect1(e.target.value);
 
     }
 
 
-    console.log(select);
+    console.log(select1);
+
+    const handleChange2 = (e) => {
+
+        setSelect2(e.target.value);
+
+    }
+
+
+    console.log(select2);
 
 
     useEffect(() => {
@@ -71,7 +81,7 @@ const Combats = () => {
             <div className="select_champions">
                 <form className='form-combat'>
                     <div className="form_top">
-                        <Link to={`/arene/${cards._id}/${cards._id}`}><button className='btn_fight'>combattez !</button></Link>
+                        <Link to={`/arene/${select1}/${select2}`}><button className='btn_fight'>combattez !</button></Link>
                     </div>
                     <div className="form_bottom">
                         {cards.map((c) => {
@@ -100,7 +110,7 @@ const Combats = () => {
                     
                     <div className="form_select">
 
-                        <select id='select' onChange={handleChange}>
+                        <select id='select' onChange={handleChange1}>
                             {cards.map((c) => {
 
                                 return(
@@ -111,7 +121,7 @@ const Combats = () => {
                             })}
                         </select>
                         <h1>VS</h1>
-                        <select id='select' onChange={handleChange}>
+                        <select id='select' onChange={handleChange2}>
                             {cards.map((c) => {
 
                                 return(
