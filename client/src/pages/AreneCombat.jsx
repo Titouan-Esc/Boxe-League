@@ -5,8 +5,20 @@ import axios from 'axios';
 
 const AreneCombat = () => {
 
-    const [champions1, setChampions1] = useState([]);
-    const [champions2, setChampions2] = useState([]);
+    let [champions1, setChampions1] = useState({
+        name : '',
+        image : '',
+        description : '',
+        atk : '',
+        def : ''
+    });
+    let [champions2, setChampions2] = useState({
+        name : '',
+        image : '',
+        description : '',
+        atk : '',
+        def : ''
+    });
 
 
     let { id1, id2 } = useParams();
@@ -23,36 +35,50 @@ const AreneCombat = () => {
         }
     }
 
-    
+    console.log(champions1);
+    console.log(champions2);
 
     useEffect(() => {
         fetchCards();
-    },[champions])
+    },[])
 
     return (
         <main className='arene'>
-            
-            {champions.map((val) => {
-                const {_id, name, description, image, atk, def} = val;
 
-                return(
-                    <div className="fond_carte" key={_id}>
+                    <div className="fond_carte">
                         <div className="carte">
-                            <h2>{name}</h2>
+                            <h2>{champions1.name}</h2>
                             <div className="carte_img">
-                                <img src={image} alt="Image du champion"/>
+                                <img src={champions1.image} alt="Image du champion"/>
                             </div>
                             <div className="carte_desc">
-                                <p>{description}</p>
+                                <p>{champions1.description}</p>
                             </div>
                             <div className="atk_def">
-                                <p>ATK {atk}</p>
-                                <p>DEF {def}</p>
+                                <p>ATK {champions1.atk}</p>
+                                <p>DEF {champions1.def}</p>
                             </div>
                         </div>
                     </div>
-                )
-            })}
+
+                    <div className="fond_carte">
+                        <div className="carte">
+                            <h2>{champions2.name}</h2>
+                            <div className="carte_img">
+                                <img src={champions2.image} alt="Image du champion"/>
+                            </div>
+                            <div className="carte_desc">
+                                <p>{champions2.description}</p>
+                            </div>
+                            <div className="atk_def">
+                                <p>ATK {champions2.atk}</p>
+                                <p>DEF {champions2.def}</p>
+                            </div>
+                        </div>
+                    </div>
+
+            
+
         </main>
     )
 }

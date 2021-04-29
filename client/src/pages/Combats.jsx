@@ -111,6 +111,7 @@ const Combats = () => {
                     <div className="form_select">
 
                         <select id='select' onChange={handleChange1}>
+                            <option>---Choissier votre champions---</option>
                             {cards.map((c) => {
 
                                 return(
@@ -122,6 +123,7 @@ const Combats = () => {
                         </select>
                         <h1>VS</h1>
                         <select id='select' onChange={handleChange2}>
+                            <option>---Choissier votre champions---</option>
                             {cards.map((c) => {
 
                                 return(
