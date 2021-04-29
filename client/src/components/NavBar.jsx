@@ -16,9 +16,9 @@ const NavBar = () => {
                     </>
                 ) : (
                     <>
-                        <Link to='/champions'>Vos Champions</Link>
+                        <Link to='/champions' className='p'>Vos Champions</Link>
                         <Link to='/'><img src="./logo/logo.png" alt="Logo du site"/></Link>
-                        <Link to='/combats'>Combats</Link>
+                        <Link to='/combats' className='p'>Combats</Link>
                     </>
                 )}
             </nav>

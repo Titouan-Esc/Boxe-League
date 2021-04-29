@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Redirect, Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -19,6 +19,7 @@ const AreneCombat = () => {
         atk : '',
         def : ''
     });
+    const [result, setResult] = useState('');
 
 
     let { id1, id2 } = useParams();
@@ -42,8 +43,41 @@ const AreneCombat = () => {
         }
     }
 
-    console.log(champions1);
-    console.log(champions2);
+    const handleClick = () => {
+
+        
+        if(champions1.atk > champions2.atk || champions1.def > champions2.def) {
+            setResult(champions1._id);
+            console.log(result);
+        }else if(champions1.atk < champions2.atk || champions1.def < champions2.def) {
+            setResult(champions2._id);
+            console.log(result);
+
+        }else if(champions1.atk > champions2.atk || champions1.def < champions2.def) {
+            console.log('ok3');
+
+        }else if(champions1.atk < champions2.atk || champions1.def > champions2.def) {
+            console.log('ok4');
+
+        }else if(champions1.atk === champions2.atk || champions1.def === champions2.def) {
+            console.log('ok5');
+            
+
+        }else if(champions1.atk > champions2.atk || champions1.def === champions2.def) {
+            console.log('ok6');
+
+        }else if(champions1.atk === champions2.atk || champions1.def < champions2.def) {
+            console.log('ok7');
+
+        }else if(champions1.atk < champions2.atk || champions1.def === champions2.def) {
+            console.log('ok8');
+
+        }else if(champions1.atk === champions2.atk || champions1.def > champions2.def) {
+            console.log('ok9');
+
+        }
+
+    }
 
 
     useEffect(() => {
@@ -72,7 +106,8 @@ const AreneCombat = () => {
 
                     <div className="middle">
                         <h1>VS</h1>
-                        <button>Combattez!</button>
+                        <button onClick={handleClick}>Combattez!</button>
+                        <Link to={`/gagnant/${result}`}>Gagnant</Link>
                     </div>
 
                     <div className="fond_carte" key={champions2._id}>

@@ -15,6 +15,7 @@ import Admin from './pages/Admin';
 import AdminRegister from './pages/AdminRegister';
 import CreationMma from './pages/CreationMma';
 import UpdateMma from './pages/UpdateMma';
+import Gagnant from './pages/Gagnant';
 
 function App() {
 
@@ -81,6 +82,7 @@ function App() {
               <Route path='/admin-register' component={AdminRegister}/>
               <Route path='/create-mma' component={CreationMma}/>
               <Route path='/update-mma/:id' component={UpdateMma}/>
+              <Route path='/gagnant/:id' component={Gagnant}/>
             </Switch>
           </UserContext.Provider>
           </AdminContext.Provider>
