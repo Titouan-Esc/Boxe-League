@@ -81,11 +81,19 @@ const AreneCombat = () => {
 
     if(!result) {
         gagnant = (
-            <h3 className='com'>Combatter pour voir qui est le meilleur</h3>
+            <div className="middle">
+                <h1>VS</h1>
+                <button onClick={handleClick}>Combattez!</button>
+                <h3 className='com'>Combatter pour voir qui est le meilleur</h3>
+            </div>
         )
     }else if(result) {
         gagnant = (
-            <Link to={`/gagnant/${result}`} className='link'>Gagnant</Link>
+            <div className="middle">
+                <h1>VS</h1>
+                <button onClick={handleClick} style={{display : "none"}}>Combattez!</button>
+                <Link to={`/gagnant/${result}`} className='link'>Voyer qui à gagné !</Link>
+            </div>
         )
     }
 
@@ -113,13 +121,7 @@ const AreneCombat = () => {
                             </div>
                         </div>
                     </div>
-
-                    <div className="middle">
-                        <h1>VS</h1>
-                        <button onClick={handleClick}>Combattez!</button>
                         {gagnant}
-                    </div>
-
                     <div className="fond_carte" key={champions2._id}>
                         <div className="carte">
                             <h2>{champions2.name}</h2>

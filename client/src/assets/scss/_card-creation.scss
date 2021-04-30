@@ -8,6 +8,7 @@
     @include flex-box(column, center, center);
     background-color: black;
     border-radius: 8px;
+    box-shadow: 10px 10px 10px black;
 
     .carte {
       width: 95%;
