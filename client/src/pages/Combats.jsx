@@ -80,9 +80,6 @@ const Combats = () => {
 
             <div className="select_champions">
                 <form className='form-combat'>
-                    <div className="form_top">
-                        <Link to={`/arene/${select1}/${select2}`}><button className='btn_fight'>combattez !</button></Link>
-                    </div>
                     <div className="form_bottom">
                         {cards.map((c) => {
                             
@@ -134,6 +131,7 @@ const Combats = () => {
                             })}
                         </select>
                     </div>
+                    <Link to={`/arene/${select1}/${select2}`}><button className='btn_fight'>combattez !</button></Link>
                 </form>
             </div>
         </main>

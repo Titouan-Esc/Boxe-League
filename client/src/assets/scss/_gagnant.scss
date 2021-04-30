@@ -1,9 +1,15 @@
-.arene {
+.gagnant {
   height: 100vh;
+  position: relative;
+  @include flex-box(column, space-around, center);
   background-color: $color_one;
-  background-image: url("../image/fond arene.png");
-  background-position: center;
-  @include flex-box(row, space-around, center);
+
+  .return {
+    width: 3vw;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+  }
 
   .fond_carte {
     width: 27vw;
@@ -44,39 +50,6 @@
         border: 3px solid $color_one;
         padding: 5px;
       }
-    }
-  }
-
-  .middle {
-    @include flex-box(column, space-between, center);
-
-    h1 {
-      margin-bottom: 2em;
-    }
-
-    button {
-      width: 15vw;
-      height: 5vh;
-      font-family: "utopia";
-      font-size: 1em;
-      text-align: center;
-      border: 0;
-      border-radius: 22px;
-      margin: 40px;
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
-
-    .com {
-      font-family: "roboto-bold";
-      color: white;
-    }
-
-    .link {
-      font-family: "roboto-bold";
-      color: white;
     }
   }
 }

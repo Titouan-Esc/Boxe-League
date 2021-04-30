@@ -48,35 +48,45 @@ const AreneCombat = () => {
         
         if(champions1.atk > champions2.atk || champions1.def > champions2.def) {
             setResult(champions1._id);
-            console.log(result);
+
         }else if(champions1.atk < champions2.atk || champions1.def < champions2.def) {
             setResult(champions2._id);
-            console.log(result);
 
         }else if(champions1.atk > champions2.atk || champions1.def < champions2.def) {
-            console.log('ok3');
+            setResult(champions1._id);
 
         }else if(champions1.atk < champions2.atk || champions1.def > champions2.def) {
-            console.log('ok4');
+            setResult(champions2._id);
 
         }else if(champions1.atk === champions2.atk || champions1.def === champions2.def) {
-            console.log('ok5');
+            alert('Parfaite égalitée, retourné sur la page combats');
             
-
         }else if(champions1.atk > champions2.atk || champions1.def === champions2.def) {
-            console.log('ok6');
+            setResult(champions1._id);
 
         }else if(champions1.atk === champions2.atk || champions1.def < champions2.def) {
-            console.log('ok7');
+            setResult(champions2._id);
 
         }else if(champions1.atk < champions2.atk || champions1.def === champions2.def) {
-            console.log('ok8');
+            setResult(champions2._id);
 
         }else if(champions1.atk === champions2.atk || champions1.def > champions2.def) {
-            console.log('ok9');
+            setResult(champions1._id);
 
         }
 
+    }
+
+    let gagnant;
+
+    if(!result) {
+        gagnant = (
+            <h3 className='com'>Combatter pour voir qui est le meilleur</h3>
+        )
+    }else if(result) {
+        gagnant = (
+            <Link to={`/gagnant/${result}`} className='link'>Gagnant</Link>
+        )
     }
 
 
@@ -107,7 +117,7 @@ const AreneCombat = () => {
                     <div className="middle">
                         <h1>VS</h1>
                         <button onClick={handleClick}>Combattez!</button>
-                        <Link to={`/gagnant/${result}`}>Gagnant</Link>
+                        {gagnant}
                     </div>
 
                     <div className="fond_carte" key={champions2._id}>
