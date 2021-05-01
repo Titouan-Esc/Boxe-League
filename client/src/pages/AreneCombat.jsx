@@ -1,5 +1,5 @@
-import { useParams, Redirect, Link } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
 
@@ -20,6 +20,8 @@ const AreneCombat = () => {
         def : ''
     });
     const [result, setResult] = useState('');
+    const animation1 = useRef();
+    const animation2 = useRef();
 
 
     let { id1, id2 } = useParams();
@@ -44,7 +46,6 @@ const AreneCombat = () => {
     }
 
     const handleClick = () => {
-
         
         if(champions1.atk > champions2.atk || champions1.def > champions2.def) {
             setResult(champions1._id);
@@ -72,9 +73,21 @@ const AreneCombat = () => {
 
         }else if(champions1.atk === champions2.atk || champions1.def > champions2.def) {
             setResult(champions1._id);
-
         }
+    }
 
+    const animationCard = () => {
+        const animate = animation1.current;
+        animate.classList.toggle('animation-card1');
+
+        const animate2 = animation2.current;
+        animate2.classList.toggle('animation-card2')
+
+    }
+
+    const onClick = () => {
+        handleClick();
+        animationCard();
     }
 
     let gagnant;
@@ -83,15 +96,15 @@ const AreneCombat = () => {
         gagnant = (
             <div className="middle">
                 <h1>VS</h1>
-                <button onClick={handleClick}>Combattez!</button>
+                <button onClick={onClick}>Combattez!</button>
                 <h3 className='com'>Combatter pour voir qui est le meilleur</h3>
             </div>
         )
     }else if(result) {
         gagnant = (
             <div className="middle">
-                <h1>VS</h1>
-                <button onClick={handleClick} style={{display : "none"}}>Combattez!</button>
+                <h1 style={{display : "none"}}>VS</h1>
+                <button onClick={onClick} style={{display : "none"}}>Combattez!</button>
                 <Link to={`/gagnant/${result}`} className='link'>Voyer qui à gagné !</Link>
             </div>
         )
@@ -106,32 +119,32 @@ const AreneCombat = () => {
     return (
         <main className='arene'>
 
-                    <div className="fond_carte" key={champions1._id}>
-                        <div className="carte">
+                    <div className="fond_carte1" key={champions1._id} ref={animation1}>
+                        <div className="carte1">
                             <h2>{champions1.name}</h2>
-                            <div className="carte_img">
+                            <div className="carte_img1">
                                 <img src={`/${champions1.image}`} alt="champion"/>
                             </div>
-                            <div className="carte_desc">
+                            <div className="carte_desc1">
                                 <p>{champions1.description}</p>
                             </div>
-                            <div className="atk_def">
+                            <div className="atk_def1">
                                 <p>ATK {champions1.atk}</p>
                                 <p>DEF {champions1.def}</p>
                             </div>
                         </div>
                     </div>
                         {gagnant}
-                    <div className="fond_carte" key={champions2._id}>
-                        <div className="carte">
+                    <div className="fond_carte2" key={champions2._id} ref={animation2}>
+                        <div className="carte2">
                             <h2>{champions2.name}</h2>
-                            <div className="carte_img">
+                            <div className="carte_img2">
                                 <img src={`/${champions2.image}`} alt="champion"/>
                             </div>
-                            <div className="carte_desc">
+                            <div className="carte_desc2">
                                 <p>{champions2.description}</p>
                             </div>
-                            <div className="atk_def">
+                            <div className="atk_def2">
                                 <p>ATK {champions2.atk}</p>
                                 <p>DEF {champions2.def}</p>
                             </div>

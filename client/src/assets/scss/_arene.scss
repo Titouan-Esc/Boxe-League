@@ -1,26 +1,49 @@
 .arene {
   height: 100vh;
+  position: relative;
   background-color: $color_one;
   background-image: url("../image/fond arene.png");
   background-position: center;
   @include flex-box(row, space-around, center);
 
-  .fond_carte {
+  @keyframes animate1 {
+    from {
+      position: absolute;
+      left: 57px;
+    }
+    to {
+      left: 700px;
+    }
+  }
+
+  @keyframes animate2 {
+    from {
+      position: absolute;
+      right: 57px;
+    }
+    to {
+      right: 700px;
+    }
+  }
+
+  .fond_carte1 {
     width: 27vw;
     height: 80vh;
     @include flex-box(column, center, center);
     background-color: black;
     border-radius: 8px;
     box-shadow: 10px 10px 10px black;
+    animation: animate1 1.5s ease-in-out;
+    z-index: 400;
 
-    .carte {
+    .carte1 {
       width: 95%;
       height: 95%;
       @include flex-box(column, space-between, center);
       background-color: white;
       padding: 20px;
 
-      .carte_img {
+      .carte_img1 {
         width: 95%;
         @include flex-box(row, center, center);
         border: 3px solid $color_one;
@@ -31,7 +54,7 @@
         }
       }
 
-      .carte_desc {
+      .carte_desc1 {
         width: 95%;
         @include flex-box(row, center, center);
         text-align: center;
@@ -39,7 +62,52 @@
         padding: 5px;
       }
 
-      .atk_def {
+      .atk_def1 {
+        width: 95%;
+        @include flex-box(row, space-around, center);
+        border: 3px solid $color_one;
+        padding: 5px;
+      }
+    }
+  }
+
+  .fond_carte2 {
+    width: 27vw;
+    height: 80vh;
+    @include flex-box(column, center, center);
+    background-color: black;
+    border-radius: 8px;
+    box-shadow: 10px 10px 10px black;
+    animation: animate2 1.5s ease-in-out;
+    z-index: 400;
+
+    .carte2 {
+      width: 95%;
+      height: 95%;
+      @include flex-box(column, space-between, center);
+      background-color: white;
+      padding: 20px;
+
+      .carte_img2 {
+        width: 95%;
+        @include flex-box(row, center, center);
+        border: 3px solid $color_one;
+        padding: 5px;
+
+        img {
+          width: 12vw;
+        }
+      }
+
+      .carte_desc2 {
+        width: 95%;
+        @include flex-box(row, center, center);
+        text-align: center;
+        border: 3px solid $color_one;
+        padding: 5px;
+      }
+
+      .atk_def2 {
         width: 95%;
         @include flex-box(row, space-around, center);
         border: 3px solid $color_one;
@@ -50,6 +118,7 @@
 
   .middle {
     @include flex-box(column, space-between, center);
+    z-index: 10;
 
     h1 {
       margin-bottom: 2em;
