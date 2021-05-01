@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import { keyframes } from 'styled-components';
 
 
 const AreneCombat = () => {
@@ -20,8 +21,8 @@ const AreneCombat = () => {
         def : ''
     });
     const [result, setResult] = useState('');
-    const animation1 = useRef();
-    const animation2 = useRef();
+    // const animation1 = useRef();
+    // const animation2 = useRef();
 
 
     let { id1, id2 } = useParams();
@@ -76,15 +77,41 @@ const AreneCombat = () => {
         }
     }
 
+    let animation1;
+
+    let animation2;
+
     const animationCard = () => {
-        const animate = animation1.current;
-        animate.classList.toggle('animation-card1');
+        console.log('ok');
 
-        const animate2 = animation2.current;
-        animate2.classList.toggle('animation-card2')
-
+        animation1 = keyframes`
+            0% { 
+                position: absolute; 
+                left: 57px; 
+            }
+            100% { 
+                left: 700px; 
+            }
+        `
+        animation2 = keyframes`
+            0% { 
+                position: absolute; 
+                right: 57px;
+            }
+            100% { 
+                right: 700px; 
+            }
+        `        
     }
 
+    const style1 = {
+        animation : `${animation1} 1.5s easy-in-out`
+    }
+
+    const style2 = {
+        animation : `${animation2} 1.5s easy-in-out`
+    }
+    
     const onClick = () => {
         handleClick();
         animationCard();
@@ -119,7 +146,7 @@ const AreneCombat = () => {
     return (
         <main className='arene'>
 
-                    <div className="fond_carte1" key={champions1._id} ref={animation1}>
+                    <div className="fond_carte1" key={champions1._id} style={style1}>
                         <div className="carte1">
                             <h2>{champions1.name}</h2>
                             <div className="carte_img1">
@@ -135,7 +162,7 @@ const AreneCombat = () => {
                         </div>
                     </div>
                         {gagnant}
-                    <div className="fond_carte2" key={champions2._id} ref={animation2}>
+                    <div className="fond_carte2" key={champions2._id} style={style2}>
                         <div className="carte2">
                             <h2>{champions2.name}</h2>
                             <div className="carte_img2">
