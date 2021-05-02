@@ -42,6 +42,31 @@
       }
     }
   }
+
+  // ? Page arene
+  .arene {
+    .fond_carte {
+      width: 30vw;
+      .carte {
+        .carte_img {
+        }
+        .carte_desc {
+        }
+        .atk_def {
+        }
+      }
+    }
+    .middle {
+      h1 {
+      }
+      button {
+      }
+      .com {
+      }
+      .link {
+      }
+    }
+  }
 }
 
 // ! Second breakpoint
@@ -98,6 +123,31 @@
         button {
           font-size: 0.8em;
         }
+      }
+    }
+  }
+
+  // ? Page arene
+  .arene {
+    .fond_carte {
+      .carte {
+        .carte_img {
+        }
+        .carte_desc {
+        }
+        .atk_def {
+        }
+      }
+    }
+    .middle {
+      h1 {
+      }
+      button {
+      }
+      .com {
+        font-size: 15px;
+      }
+      .link {
       }
     }
   }
@@ -288,6 +338,34 @@
       }
     }
   }
+
+  // ? Page arene
+  .arene {
+    .fond_carte {
+      width: 35vw;
+      .carte {
+        .carte_img {
+        }
+        .carte_desc {
+        }
+        .atk_def {
+        }
+      }
+    }
+    .middle {
+      h1 {
+      }
+      button {
+        width: 10vw;
+        font-size: 0.8em;
+      }
+      .com {
+        font-size: 12px;
+      }
+      .link {
+      }
+    }
+  }
 }
 
 // ! Cinquième breakpoint
@@ -348,6 +426,34 @@
             width: 30vw;
           }
         }
+      }
+    }
+  }
+
+  // ? Page arene
+  .arene {
+    .fond_carte {
+      width: 35vw;
+      .carte {
+        .carte_img {
+        }
+        .carte_desc {
+        }
+        .atk_def {
+        }
+      }
+    }
+    .middle {
+      h1 {
+      }
+      button {
+        width: 10vw;
+        font-size: 0.6em;
+      }
+      .com {
+        font-size: 11px;
+      }
+      .link {
       }
     }
   }
@@ -463,6 +569,39 @@
     .middel_combat {
       .btn_fight {
         font-size: 0.7em;
+      }
+    }
+  }
+
+  // ? Page arene
+  .arene {
+    height: 200vh;
+    @include flex-box(column, space-around, center);
+    .fond_carte {
+      width: 50vw;
+      .carte {
+        .carte_img {
+          img {
+            width: 20vw;
+          }
+        }
+        .carte_desc {
+        }
+        .atk_def {
+        }
+      }
+    }
+    .middle {
+      h1 {
+      }
+      button {
+        width: 15vw;
+        font-size: 0.8em;
+      }
+      .com {
+        font-size: 13px;
+      }
+      .link {
       }
     }
   }
@@ -611,6 +750,39 @@
           width: 15vw;
           font-size: 10px;
         }
+      }
+    }
+  }
+
+  // ? Page arene
+  .arene {
+    height: 200vh;
+    @include flex-box(column, space-around, center);
+    .fond_carte {
+      width: 55vw;
+      .carte {
+        .carte_img {
+          img {
+            width: 20vw;
+          }
+        }
+        .carte_desc {
+        }
+        .atk_def {
+        }
+      }
+    }
+    .middle {
+      h1 {
+      }
+      button {
+        width: 15vw;
+        font-size: 0.7em;
+      }
+      .com {
+        font-size: 13px;
+      }
+      .link {
       }
     }
   }
@@ -815,6 +987,39 @@
           width: 25vw;
           font-size: 0.7em;
         }
+      }
+    }
+  }
+
+  // ? Page arene
+  .arene {
+    height: 200vh;
+    @include flex-box(column, space-around, center);
+    .fond_carte {
+      width: 60vw;
+      .carte {
+        .carte_img {
+          img {
+            width: 20vw;
+          }
+        }
+        .carte_desc {
+        }
+        .atk_def {
+        }
+      }
+    }
+    .middle {
+      h1 {
+      }
+      button {
+        width: 20vw;
+        font-size: 0.7em;
+      }
+      .com {
+        font-size: 13px;
+      }
+      .link {
       }
     }
   }
@@ -1039,6 +1244,39 @@
             width: 45vw;
           }
         }
+      }
+    }
+  }
+
+  // ? Page arene
+  .arene {
+    height: 200vh;
+    @include flex-box(column, space-around, center);
+    .fond_carte {
+      width: 70vw;
+      .carte {
+        .carte_img {
+          img {
+            width: 30vw;
+          }
+        }
+        .carte_desc {
+        }
+        .atk_def {
+        }
+      }
+    }
+    .middle {
+      h1 {
+      }
+      button {
+        width: 25vw;
+        font-size: 0.7em;
+      }
+      .com {
+        font-size: 13px;
+      }
+      .link {
       }
     }
   }

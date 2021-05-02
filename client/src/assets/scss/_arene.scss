@@ -6,7 +6,7 @@
   background-position: center;
   @include flex-box(row, space-around, center);
 
-  .fond_carte1 {
+  .fond_carte {
     width: 27vw;
     height: 80vh;
     @include flex-box(column, center, center);
@@ -15,14 +15,14 @@
     box-shadow: 10px 10px 10px black;
     z-index: 400;
 
-    .carte1 {
+    .carte {
       width: 95%;
       height: 95%;
       @include flex-box(column, space-between, center);
       background-color: white;
       padding: 20px;
 
-      .carte_img1 {
+      .carte_img {
         width: 95%;
         @include flex-box(row, center, center);
         border: 3px solid $color_one;
@@ -33,7 +33,7 @@
         }
       }
 
-      .carte_desc1 {
+      .carte_desc {
         width: 95%;
         @include flex-box(row, center, center);
         text-align: center;
@@ -41,51 +41,7 @@
         padding: 5px;
       }
 
-      .atk_def1 {
-        width: 95%;
-        @include flex-box(row, space-around, center);
-        border: 3px solid $color_one;
-        padding: 5px;
-      }
-    }
-  }
-
-  .fond_carte2 {
-    width: 27vw;
-    height: 80vh;
-    @include flex-box(column, center, center);
-    background-color: black;
-    border-radius: 8px;
-    box-shadow: 10px 10px 10px black;
-    z-index: 400;
-
-    .carte2 {
-      width: 95%;
-      height: 95%;
-      @include flex-box(column, space-between, center);
-      background-color: white;
-      padding: 20px;
-
-      .carte_img2 {
-        width: 95%;
-        @include flex-box(row, center, center);
-        border: 3px solid $color_one;
-        padding: 5px;
-
-        img {
-          width: 12vw;
-        }
-      }
-
-      .carte_desc2 {
-        width: 95%;
-        @include flex-box(row, center, center);
-        text-align: center;
-        border: 3px solid $color_one;
-        padding: 5px;
-      }
-
-      .atk_def2 {
+      .atk_def {
         width: 95%;
         @include flex-box(row, space-around, center);
         border: 3px solid $color_one;

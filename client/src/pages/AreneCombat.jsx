@@ -146,32 +146,32 @@ const AreneCombat = () => {
     return (
         <main className='arene'>
 
-                    <div className="fond_carte1" key={champions1._id} style={style1}>
-                        <div className="carte1">
+                    <div className="fond_carte" key={champions1._id} style={style1}>
+                        <div className="carte">
                             <h2>{champions1.name}</h2>
-                            <div className="carte_img1">
+                            <div className="carte_img">
                                 <img src={`/${champions1.image}`} alt="champion"/>
                             </div>
-                            <div className="carte_desc1">
+                            <div className="carte_desc">
                                 <p>{champions1.description}</p>
                             </div>
-                            <div className="atk_def1">
+                            <div className="atk_def">
                                 <p>ATK {champions1.atk}</p>
                                 <p>DEF {champions1.def}</p>
                             </div>
                         </div>
                     </div>
                         {gagnant}
-                    <div className="fond_carte2" key={champions2._id} style={style2}>
-                        <div className="carte2">
+                    <div className="fond_carte" key={champions2._id} style={style2}>
+                        <div className="carte">
                             <h2>{champions2.name}</h2>
-                            <div className="carte_img2">
+                            <div className="carte_img">
                                 <img src={`/${champions2.image}`} alt="champion"/>
                             </div>
-                            <div className="carte_desc2">
+                            <div className="carte_desc">
                                 <p>{champions2.description}</p>
                             </div>
-                            <div className="atk_def2">
+                            <div className="atk_def">
                                 <p>ATK {champions2.atk}</p>
                                 <p>DEF {champions2.def}</p>
                             </div>
