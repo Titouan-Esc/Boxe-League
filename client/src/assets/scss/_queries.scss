@@ -335,6 +335,22 @@
       }
     }
   }
+
+  // ? Combats
+  .combat {
+    .select_champions {
+      .form-combat {
+        .btn_fight {
+          width: 25vw;
+        }
+        .form_select {
+          #select {
+            width: 30vw;
+          }
+        }
+      }
+    }
+  }
 }
 
 // ! Sixième breakpoint
@@ -1005,6 +1021,23 @@
         button {
           width: 30vw;
           font-size: 0.7em;
+        }
+      }
+    }
+  }
+
+  // ? Combats
+  .combat {
+    .select_champions {
+      .form-combat {
+        .btn_fight {
+          width: 35vw;
+        }
+        .form_select {
+          @include flex-box(column, space-around, center);
+          #select {
+            width: 45vw;
+          }
         }
       }
     }
